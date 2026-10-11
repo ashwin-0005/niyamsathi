@@ -26,6 +26,7 @@ import ComplianceSlip from './ComplianceSlip'
 import DemoScenarioSelector from './DemoScenarioSelector'
 import RuleExplorer from './RuleExplorer'
 import WhyThisRule from './WhyThisRule'
+import BeforeYouApplyChecklist from './BeforeYouApplyChecklist'
 import { ALL_TOPICS, answerQuery, formatValue, pageLabel } from '../lib/engine'
 import { parseQuestion } from '../lib/parse'
 import { computeComplianceStatus, CORE_TOPICS } from '../lib/compliance'
@@ -482,18 +483,22 @@ export default function Dashboard({ lang, onLangChange, onExit, initialScenarioI
                     />
                   </div>
 
-                  <section className="panel no-print p-5">
-                    <p className="display text-sm font-bold text-paper">{t('slipTitle', lang)}</p>
-                    <p className="mt-2 text-xs leading-relaxed text-faint">{t('slipDisclaimer', lang)}</p>
-                    <div className="panel-inset numeric mt-3 flex items-center justify-between px-3 py-2 text-xs">
-                      <span className="text-faint">{t('slipReference', lang)}</span>
-                      <span className="font-bold tracking-wider text-teal">{referenceCode}</span>
-                    </div>
-                    <button type="button" onClick={() => setSlipOpen(true)} className="btn btn-primary focus-ring mt-3 w-full">
-                      <FileDown className="h-4 w-4" aria-hidden="true" />
-                      {t('downloadSlip', lang)}
-                    </button>
-                  </section>
+                  <div className="space-y-5">
+                    <BeforeYouApplyChecklist lang={answerLang} result={complianceResult} zone={result.query.zone} />
+
+                    <section className="panel no-print p-5">
+                      <p className="display text-sm font-bold text-paper">{t('slipTitle', lang)}</p>
+                      <p className="mt-2 text-xs leading-relaxed text-faint">{t('slipDisclaimer', lang)}</p>
+                      <div className="panel-inset numeric mt-3 flex items-center justify-between px-3 py-2 text-xs">
+                        <span className="text-faint">{t('slipReference', lang)}</span>
+                        <span className="font-bold tracking-wider text-teal">{referenceCode}</span>
+                      </div>
+                      <button type="button" onClick={() => setSlipOpen(true)} className="btn btn-primary focus-ring mt-3 w-full">
+                        <FileDown className="h-4 w-4" aria-hidden="true" />
+                        {t('downloadSlip', lang)}
+                      </button>
+                    </section>
+                  </div>
                 </div>
               )}
             </div>

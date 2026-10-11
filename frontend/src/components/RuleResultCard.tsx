@@ -150,9 +150,14 @@ export default function RuleResultCard({ answer, lang, index = 0 }: Props) {
 
           {answer.superseded.length > 0 && (
             <div className="panel-inset px-3 py-2.5">
-              <p className="flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.1em] text-faint">
+              <p className="flex flex-wrap items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.1em] text-faint">
                 <History className="h-3.5 w-3.5" />
                 {answer.changedByAmendment ? t('changed', lang) : t('unchanged', lang)}
+                {source.excerptStatus !== 'verified' && (
+                  <span className="chip tint-warn border normal-case tracking-normal">
+                    <ShieldAlert className="h-3 w-3" /> {t('sourceNeedsVerification', lang)}
+                  </span>
+                )}
               </p>
               {answer.superseded.map((s) => (
                 <p key={s.rule.id} className="numeric mt-1 text-xs text-muted">

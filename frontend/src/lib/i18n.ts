@@ -92,9 +92,12 @@ const S = {
     en: 'Placeholder text — not reproduced from the gazette. Replace with the verified excerpt.',
     hi: 'प्रारूपिक पाठ — राजपत्र से प्रतिलिपित नहीं। सत्यापित उद्धरण से प्रतिस्थापित करें।',
   },
+  versionVerified: { en: 'Notification verified against the official gazette', hi: 'अधिसूचना आधिकारिक राजपत्र से सत्यापित' },
+  versionUnverified: { en: 'Notification not yet verified — confirm with the official gazette', hi: 'अधिसूचना अभी सत्यापित नहीं — आधिकारिक राजपत्र से पुष्टि करें' },
   calculated: { en: 'Calculated from the cited rule', hi: 'उद्धृत नियम से गणना' },
   changed: { en: 'Changed by amendment', hi: 'संशोधन द्वारा परिवर्तित' },
   unchanged: { en: 'Re-notified, value unchanged', hi: 'पुनः अधिसूचित, मान अपरिवर्तित' },
+  sourceNeedsVerification: { en: 'Source needs verification', hi: 'स्रोत सत्यापन आवश्यक' },
   previously: { en: 'Previous position', hi: 'पूर्व स्थिति' },
   caution: { en: 'Check before issuing', hi: 'जारी करने से पूर्व जाँचें' },
   asOf: { en: 'Answer as on', hi: 'उत्तर इस तिथि पर' },
@@ -120,6 +123,29 @@ const S = {
   select: { en: 'select', hi: 'चुनें' },
   unitSqm: { en: 'sq m', hi: 'वर्ग मीटर' },
   unitM: { en: 'metres', hi: 'मीटर' },
+
+  step1Title: { en: 'Step 1 — Essential plot details', hi: 'चरण 1 — आवश्यक भूखंड विवरण' },
+  step2Title: { en: 'Step 2 (optional) — Plot shape & proposed construction', hi: 'चरण 2 (वैकल्पिक) — भूखंड आकार एवं प्रस्तावित निर्माण' },
+  step2Help: {
+    en: 'Add these for a to-scale drawing and a check against your actual plan. You can get a rule answer without them.',
+    hi: 'सटीक मापदंड आरेख एवं अपने वास्तविक नक़्शे की जाँच हेतु ये जोड़ें। इनके बिना भी नियम उत्तर मिल सकता है।',
+  },
+  plotAreaHelp: {
+    en: 'The total size of your plot in square metres — not the built-up or floor area.',
+    hi: 'आपके भूखंड का कुल क्षेत्रफल वर्ग मीटर में — निर्मित अथवा तल क्षेत्र नहीं।',
+  },
+  roadWidthHelp: {
+    en: "The width of the road your plot's main entrance faces.",
+    hi: 'जिस सड़क की ओर आपके भूखंड का मुख्य प्रवेश द्वार है, उसकी चौड़ाई।',
+  },
+  useHelp: {
+    en: 'What the building will mainly be used for — residential, commercial, or mixed.',
+    hi: 'भवन का मुख्य उपयोग — आवासीय, वाणिज्यिक अथवा मिश्रित।',
+  },
+  proposedFloorsHelp: {
+    en: 'How many floors you plan to build — optional, used only to check against the permissible limit.',
+    hi: 'आप कितने तल बनाने की योजना रखते हैं — वैकल्पिक, केवल अनुमेय सीमा से जाँच हेतु।',
+  },
 
   mapTitle: { en: 'Visual Plot Compliance Map', hi: 'दृश्य भूखंड अनुपालन मानचित्र' },
   mapIllustrative: {
@@ -148,6 +174,10 @@ const S = {
   statusCardDisclaimer: {
     en: 'This is a preliminary rule check based on indexed records. Final approval remains with the competent authority.',
     hi: 'यह अनुक्रमित अभिलेखों पर आधारित एक प्रारंभिक नियम जाँच है। अंतिम स्वीकृति सक्षम प्राधिकारी के अधिकार में ही रहेगी।',
+  },
+  scopeNote: {
+    en: 'This checks the setback, floor, FAR and fee figures above only. It does not confirm land-use zoning, development-plan conditions, ownership, or structural safety.',
+    hi: 'यह केवल उपरोक्त सेटबैक, तल, एफ.ए.आर. एवं शुल्क आँकड़ों की जाँच करता है। यह भू-उपयोग क्षेत्रीकरण, विकास योजना शर्तों, स्वामित्व अथवा संरचनात्मक सुरक्षा की पुष्टि नहीं करता।',
   },
   violationDetail: { en: 'short by', hi: 'की कमी' },
   violationDetailFloors: { en: 'exceeds permissible floors by', hi: 'अनुमेय तलों से अधिक' },
@@ -187,6 +217,30 @@ const S = {
   slipFloorsFarFee: { en: 'Floors, FAR and fee summary', hi: 'तल, एफ.ए.आर. एवं शुल्क सारांश' },
   slipLanguage: { en: 'Language', hi: 'भाषा' },
   slipDate: { en: 'Date issued', hi: 'जारी करने की तिथि' },
+
+  beforeYouApplyTitle: { en: 'Before you apply', hi: 'आवेदन से पहले' },
+  beforeYouApplyZoning: {
+    en: 'Confirm applicable land use and development-plan conditions for this plot with the Building Permission Branch — this check covers rule tables only, not zoning maps.',
+    hi: 'इस भूखंड हेतु लागू भू-उपयोग एवं विकास योजना शर्तों की पुष्टि भवन अनुज्ञा शाखा से करें — यह जाँच केवल नियम तालिकाओं को कवर करती है, ज़ोनिंग मानचित्र को नहीं।',
+  },
+  beforeYouApplyZone: {
+    en: 'You have not entered a zone/locality — confirm it yourself before relying on the use entered above.',
+    hi: 'आपने क्षेत्र/मोहल्ला दर्ज नहीं किया — उपर्युक्त उपयोग पर निर्भर होने से पूर्व स्वयं पुष्टि करें।',
+  },
+  beforeYouApplyViolation: { en: 'Resolve this potential violation before applying', hi: 'आवेदन से पूर्व इस संभावित उल्लंघन का समाधान करें' },
+  beforeYouApplyOfficerReview: {
+    en: 'These need officer review because the dataset could not resolve them cleanly',
+    hi: 'इन्हें अधिकारी समीक्षा की आवश्यकता है क्योंकि डेटासेट इनका स्पष्ट समाधान नहीं कर सका',
+  },
+  beforeYouApplyMissing: { en: 'Provide these to complete the preliminary check', hi: 'प्रारंभिक जाँच पूर्ण करने हेतु ये प्रदान करें' },
+  beforeYouApplyCarry: {
+    en: 'Carry the rule numbers, table numbers, and effective date shown above — or the printed Compliance Slip — when you visit the Building Permission Branch.',
+    hi: 'भवन अनुज्ञा शाखा जाते समय उपरोक्त नियम क्रमांक, तालिका क्रमांक एवं प्रभावी तिथि — अथवा मुद्रित अनुपालन पर्ची — साथ ले जाएँ।',
+  },
+  beforeYouApplyNotApproval: {
+    en: 'This is preliminary guidance only — not a building permission or approval.',
+    hi: 'यह केवल प्रारंभिक मार्गदर्शन है — भवन अनुज्ञा अथवा स्वीकृति नहीं।',
+  },
 
   demoTitle: { en: 'Try a demo scenario', hi: 'डेमो परिदृश्य आज़माएँ' },
   demo1Title: { en: '200 sq m Residential, 9 m Road', hi: '200 वर्ग मी आवासीय, 9 मी सड़क' },
@@ -352,6 +406,7 @@ const S = {
 
   // ---- Misc ---------------------------------------------------------------
   demoDataBadge: { en: 'Demo dataset — verify against official record', hi: 'डेमो डेटासेट — आधिकारिक अभिलेख से सत्यापित करें' },
+  verificationStatus: { en: 'Status', hi: 'स्थिति' },
   trustDisclaimer: {
     en: 'This tool provides preliminary rule references. Final building approval remains with the competent authority.',
     hi: 'यह साधन प्रारंभिक नियम संदर्भ प्रदान करता है। अंतिम भवन स्वीकृति सक्षम प्राधिकारी के अधिकार में ही रहेगी।',

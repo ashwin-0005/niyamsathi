@@ -84,6 +84,7 @@ export default function ComplianceStatusCard({ lang, result }: Props) {
 
         <div className="hairline" />
         <p className="text-xs leading-relaxed text-faint">{t('statusCardDisclaimer', lang)}</p>
+        <p className="text-xs leading-relaxed text-faint">{t('scopeNote', lang)}</p>
       </div>
     </section>
   )

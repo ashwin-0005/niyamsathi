@@ -7,7 +7,7 @@
  * placeholder warning can never be accidentally dropped by a card redesign.
  */
 import { useState } from 'react'
-import { ChevronDown, FileText, ShieldAlert } from 'lucide-react'
+import { BadgeCheck, ChevronDown, FileText, ShieldAlert } from 'lucide-react'
 import { pageLabel } from '../lib/engine'
 import { bi, formatDate, t } from '../lib/i18n'
 import type { Lang, Source, Version } from '../lib/types'
@@ -59,6 +59,10 @@ export default function CitationDrawer({ source, version, lang, alwaysOpen = fal
 
           <p className="numeric mt-3 text-[11px] text-faint">
             {version.notification} · {t('effective', lang)} {formatDate(version.effectiveDate, lang)}
+          </p>
+          <p className={version.verified ? 'tint-ok mt-2 flex items-center gap-1.5 text-[11px]' : 'tint-warn mt-2 flex items-center gap-1.5 text-[11px]'}>
+            {version.verified ? <BadgeCheck className="h-3.5 w-3.5 shrink-0" /> : <ShieldAlert className="h-3.5 w-3.5 shrink-0" />}
+            {version.verified ? t('versionVerified', lang) : t('versionUnverified', lang)}
           </p>
         </div>
       )}

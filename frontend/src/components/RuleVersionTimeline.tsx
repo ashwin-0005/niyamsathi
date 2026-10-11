@@ -7,7 +7,7 @@
  * and the result cards disagree about which rules are in force, which is
  * exactly the confusion this panel exists to remove.
  */
-import { CalendarClock, History, Milestone } from 'lucide-react'
+import { BadgeCheck, CalendarClock, History, Milestone, ShieldAlert } from 'lucide-react'
 import { pageLabel, VERSIONS } from '../lib/engine'
 import { bi, formatDate, t } from '../lib/i18n'
 import type { Answer, Lang } from '../lib/types'
@@ -89,6 +89,12 @@ export default function RuleVersionTimeline({ lang, asOf, onAsOfChange, focusedA
                       {t('effective', lang)} {formatDate(v.effectiveDate, lang)}
                     </p>
                     <p className="mt-1 text-xs leading-relaxed text-faint">{bi(v.scope, lang)}</p>
+                    <p className="mt-1.5 flex items-center gap-1 text-[11px] text-faint">
+                      {v.verified
+                        ? <BadgeCheck className="h-3 w-3 shrink-0 text-ok" aria-hidden="true" />
+                        : <ShieldAlert className="h-3 w-3 shrink-0 text-warn" aria-hidden="true" />}
+                      {v.verified ? t('versionVerified', lang) : t('versionUnverified', lang)}
+                    </p>
                     {active && (
                       <span className="chip tint-ok mt-2 border text-[11px]">{t('ruleVersionInForce', lang)}</span>
                     )}

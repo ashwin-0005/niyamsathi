@@ -164,6 +164,24 @@ export default function ComplianceSlip(props: Props) {
         </table>
       </section>
 
+      <section className="mt-5">
+        <h2 className="text-[11px] font-bold uppercase tracking-wider text-slate-500">{t('beforeYouApplyTitle', lang)}</h2>
+        <ul className="mt-1.5 list-disc space-y-1 pl-4 text-xs text-slate-700">
+          <li>{t('beforeYouApplyZoning', lang)}</li>
+          {zone === null && <li>{t('beforeYouApplyZone', lang)}</li>}
+          {complianceResult.violations.length > 0 && (
+            <li className="font-semibold text-rose-700">{t('beforeYouApplyViolation', lang)}</li>
+          )}
+          {complianceResult.officerReviewTopics.length > 0 && (
+            <li className="font-semibold text-slate-700">{t('beforeYouApplyOfficerReview', lang)}</li>
+          )}
+          {complianceResult.missingInputTopics.length > 0 && (
+            <li className="font-semibold text-amber-700">{t('beforeYouApplyMissing', lang)}</li>
+          )}
+          <li>{t('beforeYouApplyCarry', lang)}</li>
+        </ul>
+      </section>
+
       <footer className="mt-6 space-y-1.5 border-t-2 border-slate-900 pt-3 text-[11px]">
         <p className="font-bold text-rose-700">{t('slipDisclaimer', lang)}</p>
         <p className="text-slate-600">{t('trustDisclaimer', lang)}</p>

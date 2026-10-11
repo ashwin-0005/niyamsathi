@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import { Database, Search } from 'lucide-react'
+import { BadgeCheck, Database, Search, ShieldAlert } from 'lucide-react'
 import { ALL_TOPICS, RULES, VERSIONS, formatValue, pageLabel, sourceOf, versionOf } from '../lib/engine'
 import { TOPIC_LABEL, USE_LABEL, bi, formatDate, t } from '../lib/i18n'
 import type { Lang, Topic, Use } from '../lib/types'
@@ -79,6 +79,7 @@ export default function RuleExplorer({ lang }: { lang: Lang }) {
               <th className="px-5 py-3 font-semibold">{t('value', lang)}</th>
               <th className="px-5 py-3 font-semibold">{t('source', lang)}</th>
               <th className="px-5 py-3 font-semibold">{t('version', lang)}</th>
+              <th className="px-5 py-3 font-semibold">{t('verificationStatus', lang)}</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-line">
@@ -104,11 +105,18 @@ export default function RuleExplorer({ lang }: { lang: Lang }) {
                     {formatDate(version.effectiveDate, lang)}
                   </span>
                 </td>
+                <td className="px-5 py-3">
+                  {source.excerptStatus === 'verified' ? (
+                    <span className="chip tint-ok border text-[11px]"><BadgeCheck className="h-3 w-3" /> {t('verifiedMatch', lang)}</span>
+                  ) : (
+                    <span className="chip tint-warn border text-[11px]"><ShieldAlert className="h-3 w-3" /> {t('demoDataBadge', lang)}</span>
+                  )}
+                </td>
               </tr>
             ))}
             {rows.length === 0 && (
               <tr>
-                <td colSpan={5} className="px-5 py-10 text-center text-faint">
+                <td colSpan={6} className="px-5 py-10 text-center text-faint">
                   {t('noRule', lang)}
                 </td>
               </tr>

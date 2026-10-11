@@ -23,6 +23,7 @@ import DemoScenarioSelector from '../src/components/DemoScenarioSelector'
 import VoiceAssistantControl from '../src/components/VoiceAssistantControl'
 import CitationDrawer from '../src/components/CitationDrawer'
 import WhyThisRule from '../src/components/WhyThisRule'
+import BeforeYouApplyChecklist from '../src/components/BeforeYouApplyChecklist'
 import { answerQuery, ALL_TOPICS, SOURCES, VERSION_BY_ID } from '../src/lib/engine'
 import { parseQuestion } from '../src/lib/parse'
 import { computeComplianceStatus, CORE_TOPICS } from '../src/lib/compliance'
@@ -151,6 +152,7 @@ for (const lang of LANGS) {
   check(`RuleResultCard renders all ${answers.length} topics in ${lang}`, html.length > 4000)
   check(`${lang}: citation present`, html.includes('Table 8-A') && html.includes('42A'))
   check(`${lang}: demo badge present`, html.includes(t('demoDataBadge', lang)))
+  check(`${lang}: unverified amendment status is qualified`, html.includes(t('sourceNeedsVerification', lang)))
 }
 
 const needsInput = answerQuery(parseQuestion('What is the FAR?', '2026-10-11'))
@@ -166,10 +168,14 @@ for (const lang of LANGS) {
   check(`CitationDrawer shows the exact wording in ${lang}`, html.includes(t('exactWording', lang)))
   check(`CitationDrawer flags placeholder text as not-from-the-gazette in ${lang}`,
     html.includes(t('placeholderText', lang)))
+  check(`CitationDrawer shows the version's verification status in ${lang}`,
+    html.includes(sampleVersion.verified ? t('versionVerified', lang) : t('versionUnverified', lang)))
 }
 
 check('RuleExplorer renders', renderToStaticMarkup(<RuleExplorer lang="en" />).length > 5000)
 check('RuleExplorer renders in Hindi', renderToStaticMarkup(<RuleExplorer lang="hi" />).includes('फ्रंट सेटबैक'))
+check('RuleExplorer labels unverified demo rows',
+  renderToStaticMarkup(<RuleExplorer lang="en" />).includes(t('demoDataBadge', 'en')))
 
 for (const lang of LANGS) {
   const html = renderToStaticMarkup(
@@ -273,6 +279,8 @@ for (const lang of LANGS) {
     check(`ComplianceStatusCard renders ${label} in ${lang}`, html.includes(COMPLIANCE_STATUS_LABEL[res.status][lang]))
     check(`ComplianceStatusCard keeps the disclaimer on ${label} in ${lang}`,
       html.includes(t('statusCardDisclaimer', lang)))
+    check(`ComplianceStatusCard distinguishes a rule match from a full assessment on ${label} in ${lang}`,
+      html.includes(t('scopeNote', lang)))
   }
 
   const timeline = renderToStaticMarkup(
@@ -300,6 +308,27 @@ for (const lang of LANGS) {
   check(`ComplianceSlip renders with its reference code in ${lang}`, slip.includes(refCode))
   check(`ComplianceSlip states it is not an approval in ${lang}`, slip.includes(t('slipDisclaimer', lang)))
   check(`ComplianceSlip labels the data as demo in ${lang}`, slip.includes(t('demoDataBadge', lang)))
+  check(`ComplianceSlip includes a before-you-apply checklist in ${lang}`, slip.includes(t('beforeYouApplyTitle', lang)))
+
+  const checklist = renderToStaticMarkup(
+    <BeforeYouApplyChecklist lang={lang} result={s3.compliance} zone={s3.query.zone} />,
+  )
+  check(`BeforeYouApplyChecklist always names the zoning caveat in ${lang}`,
+    checklist.includes(t('beforeYouApplyZoning', lang)))
+  check(`BeforeYouApplyChecklist flags a missing zone in ${lang}`,
+    checklist.includes(t('beforeYouApplyZone', lang)))
+  check(`BeforeYouApplyChecklist surfaces the violation in ${lang}`,
+    checklist.includes(t('beforeYouApplyViolation', lang)))
+  check(`BeforeYouApplyChecklist states it is not an approval in ${lang}`,
+    checklist.includes(t('beforeYouApplyNotApproval', lang)))
+
+  const cleanChecklist = renderToStaticMarkup(
+    <BeforeYouApplyChecklist lang={lang} result={s1.compliance} zone="Arera Colony" />,
+  )
+  check(`BeforeYouApplyChecklist omits the zone caveat when a zone is given in ${lang}`,
+    !cleanChecklist.includes(t('beforeYouApplyZone', lang)))
+  check(`BeforeYouApplyChecklist omits the violation line on a clean match in ${lang}`,
+    !cleanChecklist.includes(t('beforeYouApplyViolation', lang)))
 
   const demos = renderToStaticMarkup(<DemoScenarioSelector lang={lang} onLoad={noop} />)
   check(`DemoScenarioSelector renders all 4 scenarios in ${lang}`,

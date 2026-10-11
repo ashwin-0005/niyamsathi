@@ -116,11 +116,11 @@ export default function PlotInputPanel(p: Props) {
 
       <div className="hairline" />
 
-      {/* ---- Required structured inputs ---------------------------------- */}
+      {/* ---- Step 1: essential structured inputs ------------------------- */}
       <div>
         <p className="label">
           <SlidersHorizontal className="mr-1 inline h-3 w-3" aria-hidden="true" />
-          {t('quickInputs', lang)}
+          {t('step1Title', lang)}
         </p>
         <div className="grid grid-cols-2 gap-3">
           <div>
@@ -129,7 +129,9 @@ export default function PlotInputPanel(p: Props) {
               id="plotArea" type="number" min="1" step="any" inputMode="decimal" placeholder="200"
               value={form.plotArea} onChange={(e) => setForm({ plotArea: e.target.value })}
               className="field numeric"
+              aria-describedby="plotAreaHelp"
             />
+            <p id="plotAreaHelp" className="mt-1 text-xs leading-relaxed text-faint">{t('plotAreaHelp', lang)}</p>
           </div>
           <div>
             <label htmlFor="roadWidth" className="label">{bi(FIELD_LABEL.roadWidth, lang)}</label>
@@ -137,38 +139,35 @@ export default function PlotInputPanel(p: Props) {
               id="roadWidth" type="number" min="0.1" step="any" inputMode="decimal" placeholder="9"
               value={form.roadWidth} onChange={(e) => setForm({ roadWidth: e.target.value })}
               className="field numeric"
+              aria-describedby="roadWidthHelp"
             />
+            <p id="roadWidthHelp" className="mt-1 text-xs leading-relaxed text-faint">{t('roadWidthHelp', lang)}</p>
           </div>
-          <div>
+          <div className="col-span-2">
             <label htmlFor="use" className="label">{bi(FIELD_LABEL.use, lang)}</label>
             <select
               id="use" value={form.use}
               onChange={(e) => setForm({ use: e.target.value as Use | '' })}
               className="field"
+              aria-describedby="useHelp"
             >
               <option value="">— {t('select', lang)} —</option>
               {(Object.keys(USE_LABEL) as Use[]).map((u) => (
                 <option key={u} value={u}>{USE_LABEL[u][lang]}</option>
               ))}
             </select>
-          </div>
-          <div>
-            <label htmlFor="proposedFloors" className="label">{bi(FIELD_LABEL.proposedFloors, lang)}</label>
-            <input
-              id="proposedFloors" type="number" min="1" step="1" inputMode="numeric" placeholder="2"
-              value={form.proposedFloors} onChange={(e) => setForm({ proposedFloors: e.target.value })}
-              className="field numeric"
-            />
+            <p id="useHelp" className="mt-1 text-xs leading-relaxed text-faint">{t('useHelp', lang)}</p>
           </div>
         </div>
       </div>
 
-      {/* ---- Geometry inputs --------------------------------------------- */}
+      {/* ---- Step 2 (optional): geometry + proposed plan ----------------- */}
       <div>
         <p className="label">
           <Compass className="mr-1 inline h-3 w-3" aria-hidden="true" />
-          {t('mapTitle', lang)} <span className="normal-case tracking-normal">({t('optional', lang)})</span>
+          {t('step2Title', lang)}
         </p>
+        <p className="mb-2 text-xs leading-relaxed text-faint">{t('step2Help', lang)}</p>
         <div className="grid grid-cols-2 gap-3">
           <div>
             <label htmlFor="plotWidth" className="label">{bi(FIELD_LABEL.plotWidth, lang)}</label>
@@ -186,7 +185,16 @@ export default function PlotInputPanel(p: Props) {
               className="field numeric"
             />
           </div>
-          <div className="col-span-2">
+          <div>
+            <label htmlFor="proposedFloors" className="label">{bi(FIELD_LABEL.proposedFloors, lang)}</label>
+            <input
+              id="proposedFloors" type="number" min="1" step="1" inputMode="numeric" placeholder="2"
+              value={form.proposedFloors} onChange={(e) => setForm({ proposedFloors: e.target.value })}
+              className="field numeric"
+              aria-describedby="proposedFloorsHelp"
+            />
+          </div>
+          <div>
             <label htmlFor="roadFacing" className="label">{bi(FIELD_LABEL.roadFacing, lang)}</label>
             <select
               id="roadFacing" value={plotDetailsForm.roadFacing}
@@ -199,6 +207,9 @@ export default function PlotInputPanel(p: Props) {
               ))}
             </select>
           </div>
+          <p id="proposedFloorsHelp" className="col-span-2 -mt-1.5 text-xs leading-relaxed text-faint">
+            {t('proposedFloorsHelp', lang)}
+          </p>
           {PROPOSED_FIELDS.map((field) => (
             <div key={field}>
               <label htmlFor={field} className="label">{bi(FIELD_LABEL[field], lang)}</label>
