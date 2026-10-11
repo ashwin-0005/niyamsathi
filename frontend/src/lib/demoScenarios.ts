@@ -4,7 +4,7 @@
  * caller (App.tsx) auto-submits — no new matching or geometry logic here,
  * just data that drives the existing form state.
  */
-import type { FormState, PlotDetailsFormState } from '../components/QueryPanel'
+import type { FormState, PlotDetailsFormState } from './formState'
 import type { Bi } from './types'
 
 export interface DemoScenario {

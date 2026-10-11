@@ -1,79 +1,409 @@
 @import "tailwindcss";
 
+/* ---------------------------------------------------------------------------
+   NiyamSathi design system — dark, cinematic civic-tech.
+
+   Palette discipline: deep charcoal/navy surfaces, one metallic (chrome) accent
+   for structure, one cool accent (teal) for interaction, one warm local accent
+   (saffron) used sparingly for civic identity, and strictly semantic
+   emerald/amber/red reserved for compliance outcomes. Compliance colour is
+   never used decoratively — if something is green on this screen, it means the
+   rule matched.
+--------------------------------------------------------------------------- */
+
 @theme {
-  --font-sans: "Inter", "Noto Sans Devanagari", ui-sans-serif, system-ui, sans-serif;
-  --color-ink-50: #f4f6fb;
-  --color-ink-100: #e6eaf4;
-  --color-ink-200: #c8d1e6;
-  --color-ink-400: #7083ad;
-  --color-ink-600: #3b4b73;
-  --color-ink-800: #1e2a4a;
-  --color-ink-900: #141d35;
-  --color-ink-950: #0b1223;
+  --font-sans: "Manrope", "Noto Sans Devanagari", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Sora", "Manrope", "Noto Sans Devanagari", ui-sans-serif, sans-serif;
+
+  /* Surfaces — deep black → midnight navy */
+  --color-void: #04060b;
+  --color-abyss: #070a11;
+  --color-carbon: #0b0f18;
+  --color-panel: #10151f;
+  --color-panel-2: #151b28;
+  --color-raised: #1b2332;
+  --color-line: #232c3d;
+  --color-line-soft: #1a2130;
+
+  /* Text */
+  --color-paper: #eef2f9;
+  --color-muted: #9aa8c0;
+  --color-faint: #64718a;
+  --color-ghost: #44506580;
+
+  /* Chrome / silver — structural metallic accent */
+  --color-chrome: #cfd9e8;
+  --color-chrome-dim: #8f9cb3;
+  --color-chrome-deep: #5c6880;
+
+  /* Teal — primary interactive accent */
+  --color-teal: #2fd3bb;
+  --color-teal-bright: #5ff0dc;
+  --color-teal-deep: #0f8e7e;
+  --color-teal-ink: #062b27;
+
+  /* Saffron — warm civic accent, used sparingly */
+  --color-saffron: #f0ab45;
+  --color-saffron-deep: #b9792a;
+  --color-saffron-ink: #2a1c08;
+
+  /* Semantic compliance colours */
+  --color-ok: #34d399;
+  --color-ok-ink: #052e22;
+  --color-warn: #fbbf24;
+  --color-warn-ink: #2e2206;
+  --color-bad: #f2616d;
+  --color-bad-ink: #330d13;
+  --color-review: #94a3b8;
+  --color-review-ink: #1c222e;
 }
 
-html { scroll-behavior: smooth; }
+/* --------------------------------------------------------------------------
+   Base
+-------------------------------------------------------------------------- */
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
 
 body {
-  @apply bg-ink-50 text-ink-900 antialiased;
-  font-feature-settings: "cv02", "cv03", "cv04";
+  @apply bg-void text-paper antialiased;
+  font-feature-settings: "cv02", "cv03", "cv04", "ss01";
+  /* Two very wide, very soft radial washes keep large dark areas from reading
+     as flat black without introducing visible gradient banding. */
+  background-image:
+    radial-gradient(1200px 700px at 12% -10%, #0e2a2f 0%, transparent 60%),
+    radial-gradient(1000px 600px at 95% 0%, #141a33 0%, transparent 55%);
+  background-attachment: fixed;
 }
 
-:lang(hi) { font-family: "Noto Sans Devanagari", "Inter", sans-serif; }
+:lang(hi) {
+  font-family: "Noto Sans Devanagari", "Manrope", sans-serif;
+}
 
-/* Measurement figures read better with tabular, non-ligating digits. */
-.numeric { font-variant-numeric: tabular-nums; letter-spacing: -0.01em; }
+::selection {
+  background: #2fd3bb44;
+  color: #eef2f9;
+}
 
-.card {
-  @apply rounded-2xl border border-ink-100 bg-white shadow-sm;
+/* Measurements read better with tabular, non-ligating digits. */
+.numeric {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.012em;
+}
+
+.display {
+  font-family: var(--font-display);
+  letter-spacing: -0.028em;
+}
+
+/* --------------------------------------------------------------------------
+   Scrollbar
+-------------------------------------------------------------------------- */
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #2b3545 transparent;
+}
+*::-webkit-scrollbar { width: 10px; height: 10px; }
+*::-webkit-scrollbar-track { background: transparent; }
+*::-webkit-scrollbar-thumb {
+  background: #232c3d;
+  border-radius: 999px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+*::-webkit-scrollbar-thumb:hover { background: #33405a; background-clip: content-box; }
+
+/* --------------------------------------------------------------------------
+   Surfaces — glass panels with a thin metallic edge
+-------------------------------------------------------------------------- */
+
+/* Component classes live in @layer components so ordinary Tailwind
+   utilities still win against them. Unlayered CSS would outrank every
+   utility, and `panel border-teal/30` would silently keep the panel
+   border instead of the teal one. */
+@layer components {
+.panel {
+  position: relative;
+  border-radius: 1rem;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.035) 0%, rgba(255, 255, 255, 0) 38%),
+    linear-gradient(180deg, var(--color-panel) 0%, var(--color-carbon) 100%);
+  border: 1px solid var(--color-line);
+  box-shadow:
+    0 1px 0 0 rgba(255, 255, 255, 0.05) inset,
+    0 18px 40px -24px rgba(0, 0, 0, 0.9);
+}
+
+.panel-flat {
+  border-radius: 0.875rem;
+  background: var(--color-panel);
+  border: 1px solid var(--color-line-soft);
+}
+
+.panel-inset {
+  border-radius: 0.875rem;
+  background: rgba(4, 6, 11, 0.55);
+  border: 1px solid var(--color-line-soft);
+}
+
+/* A hairline that fades at both ends — used for section dividers. */
+.hairline {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-line) 18%, var(--color-line) 82%, transparent);
+}
+
+/* Chrome text treatment for the wordmark and hero numerals. */
+.metal {
+  background: linear-gradient(180deg, #ffffff 0%, var(--color-chrome) 42%, var(--color-chrome-deep) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* --------------------------------------------------------------------------
+   Controls
+-------------------------------------------------------------------------- */
+
+.focus-ring {
+  @apply outline-none;
+}
+.focus-ring:focus-visible {
+  outline: 2px solid var(--color-teal);
+  outline-offset: 2px;
+  border-radius: 0.5rem;
+}
+
+.btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold;
+  transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease,
+    box-shadow 0.18s ease, transform 0.18s ease;
+}
+.btn:active { transform: translateY(1px); }
+
+.btn-primary {
+  color: var(--color-teal-ink);
+  background: linear-gradient(180deg, var(--color-teal-bright) 0%, var(--color-teal) 55%, var(--color-teal-deep) 100%);
+  border: 1px solid #4fe6d1;
+  box-shadow: 0 10px 30px -12px rgba(47, 211, 187, 0.65), 0 1px 0 rgba(255, 255, 255, 0.45) inset;
+}
+.btn-primary:hover {
+  box-shadow: 0 14px 38px -12px rgba(47, 211, 187, 0.8), 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+}
+.btn-primary:disabled {
+  opacity: 0.45;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+.btn-ghost {
+  color: var(--color-paper);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--color-line);
+}
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--color-chrome-deep);
+}
+
+.btn-quiet {
+  color: var(--color-muted);
+  background: transparent;
+  border: 1px solid transparent;
+}
+.btn-quiet:hover { color: var(--color-paper); background: rgba(255, 255, 255, 0.05); }
+
+/* Icon-only square button */
+.btn-icon {
+  @apply inline-grid place-items-center rounded-lg;
+  width: 2.25rem;
+  height: 2.25rem;
+  color: var(--color-muted);
+  border: 1px solid var(--color-line);
+  background: rgba(255, 255, 255, 0.03);
+  transition: color 0.18s ease, background-color 0.18s ease, border-color 0.18s ease;
+}
+.btn-icon:hover { color: var(--color-paper); background: rgba(255, 255, 255, 0.08); }
+.btn-icon[aria-pressed="true"] {
+  color: var(--color-teal);
+  border-color: #2fd3bb66;
+  background: #2fd3bb1a;
+}
+
+.field {
+  @apply w-full rounded-xl px-3.5 py-2.5 text-sm;
+  color: var(--color-paper);
+  background: rgba(4, 6, 11, 0.6);
+  border: 1px solid var(--color-line);
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+}
+.field::placeholder { color: var(--color-faint); }
+.field:hover { border-color: var(--color-chrome-deep); }
+.field:focus {
+  outline: none;
+  border-color: var(--color-teal);
+  box-shadow: 0 0 0 3px rgba(47, 211, 187, 0.16);
+  background: rgba(4, 6, 11, 0.85);
+}
+/* Native date/select pickers default to a light glyph set on dark backgrounds. */
+.field::-webkit-calendar-picker-indicator { filter: invert(0.75); cursor: pointer; }
+select.field option { background: var(--color-panel); color: var(--color-paper); }
+
+.label {
+  @apply mb-1.5 block text-[11px] font-semibold uppercase tracking-[0.1em];
+  color: var(--color-faint);
 }
 
 .chip {
   @apply inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium;
+  border: 1px solid var(--color-line);
+  background: rgba(255, 255, 255, 0.035);
+  color: var(--color-muted);
 }
 
-.focus-ring {
-  @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-ink-400 focus-visible:ring-offset-2;
+.chip-button {
+  transition: color 0.18s ease, background-color 0.18s ease, border-color 0.18s ease;
 }
+.chip-button:hover { color: var(--color-paper); border-color: var(--color-chrome-deep); }
+.chip-on {
+  color: var(--color-teal-ink);
+  background: var(--color-teal);
+  border-color: var(--color-teal-bright);
+}
+
+/* Semantic status tints — one class per compliance outcome. */
+.tint-ok    { color: var(--color-ok);     background: rgba(52, 211, 153, 0.1);  border-color: rgba(52, 211, 153, 0.3); }
+.tint-warn  { color: var(--color-warn);   background: rgba(251, 191, 36, 0.1);  border-color: rgba(251, 191, 36, 0.3); }
+.tint-bad   { color: var(--color-bad);    background: rgba(242, 97, 109, 0.1);  border-color: rgba(242, 97, 109, 0.32); }
+.tint-review{ color: var(--color-review); background: rgba(148, 163, 184, 0.1); border-color: rgba(148, 163, 184, 0.3); }
+.tint-saffron { color: var(--color-saffron); background: rgba(240, 171, 69, 0.1); border-color: rgba(240, 171, 69, 0.3); }
+}
+
+/* --------------------------------------------------------------------------
+   Motion — restrained, and fully disabled under prefers-reduced-motion
+-------------------------------------------------------------------------- */
 
 @keyframes rise {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
-.rise { animation: rise 0.35s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.rise { animation: rise 0.5s cubic-bezier(0.16, 1, 0.3, 1) both; }
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.fade-in { animation: fade-in 0.4s ease both; }
+
+/* Violation pulse — a slow, controlled breath, not a flash. */
+@keyframes bad-pulse {
+  0%, 100% { opacity: 0.85; }
+  50%      { opacity: 0.45; }
+}
+.bad-pulse { animation: bad-pulse 2.4s ease-in-out infinite; }
+
+/* Listening indicator for the voice control. */
+@keyframes listen-ring {
+  0%   { transform: scale(1);    opacity: 0.55; }
+  100% { transform: scale(1.75); opacity: 0; }
+}
+.listen-ring { animation: listen-ring 1.6s ease-out infinite; }
+
+@keyframes wave {
+  0%, 100% { transform: scaleY(0.3); }
+  50%      { transform: scaleY(1); }
+}
+.wave-bar { animation: wave 0.9s ease-in-out infinite; transform-origin: center; }
+
+/* SVG geometry transitions — plot lines ease to their new position when the
+   clerk changes a dimension, instead of snapping. */
+.geo-animate rect,
+.geo-animate line,
+.geo-animate polygon,
+.geo-animate path {
+  transition: x 0.45s cubic-bezier(0.16, 1, 0.3, 1), y 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    width 0.45s cubic-bezier(0.16, 1, 0.3, 1), height 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.3s ease, points 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    d 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.zone-hit {
+  cursor: pointer;
+  transition: opacity 0.2s ease, filter 0.2s ease;
+}
+.zone-hit:hover { filter: brightness(1.35); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  .geo-animate rect,
+  .geo-animate line,
+  .geo-animate polygon,
+  .geo-animate path { transition: none !important; }
+}
+
+/* --------------------------------------------------------------------------
+   Print — the app itself is never the print target once the slip is open
+-------------------------------------------------------------------------- */
 
 @media print {
   .no-print { display: none !important; }
-  body { @apply bg-white; }
-  .card { @apply border-ink-200 shadow-none; break-inside: avoid; }
+  html, body {
+    background: #ffffff !important;
+    background-image: none !important;
+    color: #0b0f18 !important;
+  }
+  .panel, .panel-flat, .panel-inset {
+    background: #ffffff !important;
+    border-color: #cbd5e1 !important;
+    box-shadow: none !important;
+    break-inside: avoid;
+  }
 }
 
 /* Citizen Compliance Slip: hidden on screen by default, shown as an on-screen
    modal for review while open, and — only while open — the only thing that
-   prints. This never fires during a normal window.print() call, so the
-   existing Print button's "print whatever's on screen" behaviour is
-   untouched when the slip isn't open. */
-.slip-root {
-  display: none;
-}
+   prints. `slip-open` is never present during an ordinary print, so the
+   existing Print button's "print what's on screen" behaviour is untouched. */
+.slip-root { display: none; }
+
 .slip-open .slip-root {
   display: block;
   position: fixed;
   inset: 0;
-  z-index: 50;
+  z-index: 60;
   overflow-y: auto;
-  background: rgba(11, 18, 35, 0.6);
+  background: rgba(4, 6, 11, 0.82);
+  backdrop-filter: blur(6px);
   padding: 2rem 1rem;
 }
 
+/* The slip is a paper document: it stays light in both themes so that what is
+   reviewed on screen is exactly what comes out of the printer. */
+.compliance-slip {
+  background: #ffffff;
+  color: #0b0f18;
+}
+
 @media print {
-  .slip-open .app-root {
-    display: none !important;
-  }
+  .slip-open .app-root { display: none !important; }
   .slip-open .slip-root {
     position: static;
     background: none;
+    backdrop-filter: none;
     padding: 0;
     overflow: visible;
+  }
+  .compliance-slip {
+    box-shadow: none !important;
+    border-radius: 0 !important;
   }
 }

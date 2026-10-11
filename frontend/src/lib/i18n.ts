@@ -203,6 +203,160 @@ const S = {
   east: { en: 'East', hi: 'पूर्व' },
   west: { en: 'West', hi: 'पश्चिम' },
   facingNotProvided: { en: 'Direction not provided', hi: 'दिशा नहीं दी गई' },
+
+  // ---- Landing: navigation & hero -----------------------------------------
+  navHowItWorks: { en: 'How It Works', hi: 'यह कैसे काम करता है' },
+  navFeatures: { en: 'Features', hi: 'विशेषताएँ' },
+  navRuleUpdates: { en: 'Rule Updates', hi: 'नियम अद्यतन' },
+  ctaCheckPlot: { en: 'Check Your Plot', hi: 'अपना भूखंड जाँचें' },
+  ctaSeeHow: { en: 'See How It Works', hi: 'कार्यप्रणाली देखें' },
+  ctaStartCheck: { en: 'Start Plot Check', hi: 'भूखंड जाँच शुरू करें' },
+  backToHome: { en: 'Back to home', hi: 'मुखपृष्ठ पर लौटें' },
+  heroBadge: {
+    en: 'Bilingual • Citation-first • Amendment-aware',
+    hi: 'द्विभाषी • उद्धरण-आधारित • संशोधन-सचेत',
+  },
+  heroHeadline: { en: 'Build with clarity, before you submit.', hi: 'प्रस्तुत करने से पहले, स्पष्टता के साथ बनाएँ।' },
+  heroSub: {
+    en: 'NiyamSathi turns complex Bhopal building rules into fast, visual, source-backed guidance for setbacks, floors, FAR, fees, and amendments.',
+    hi: 'नियमसाथी भोपाल के जटिल भवन नियमों को सेटबैक, तल, एफ.ए.आर., शुल्क एवं संशोधनों हेतु त्वरित, दृश्य और स्रोत-आधारित मार्गदर्शन में बदलता है।',
+  },
+  heroFactPlot: { en: '200 sq m Residential Plot', hi: '200 वर्ग मी आवासीय भूखंड' },
+  heroFactRoad: { en: '9 m Road', hi: '9 मी सड़क' },
+  heroFactRule: { en: 'Rule 25 · Table 8', hi: 'नियम 25 · तालिका 8' },
+
+  // ---- Landing: problem to solution ---------------------------------------
+  problemTitle: { en: 'From a long rulebook to one clear answer', hi: 'लंबी नियम पुस्तिका से एक स्पष्ट उत्तर तक' },
+  problemSub: {
+    en: 'The rules have always been public. Finding the one row that applies to your plot is the hard part.',
+    hi: 'नियम सदैव सार्वजनिक रहे हैं। कठिन कार्य है आपके भूखंड पर लागू होने वाली एकमात्र प्रविष्टि ढूँढ़ना।',
+  },
+  beforeTitle: { en: 'Today', hi: 'वर्तमान स्थिति' },
+  afterTitle: { en: 'With NiyamSathi', hi: 'नियमसाथी के साथ' },
+  before1: { en: 'A long rulebook to read end to end', hi: 'आद्योपांत पढ़ने हेतु लंबी नियम पुस्तिका' },
+  before2: { en: 'Tables spread across dozens of pages', hi: 'दर्जनों पृष्ठों में बिखरी तालिकाएँ' },
+  before3: { en: 'Amendments easily missed', hi: 'संशोधन सहज ही छूट जाते हैं' },
+  before4: { en: 'Hindi documents difficult to search', hi: 'हिन्दी दस्तावेज़ों में खोज कठिन' },
+  before5: { en: 'Citizens discover violations late', hi: 'नागरिकों को उल्लंघन देर से ज्ञात होता है' },
+  after1: { en: 'Ask in Hindi or English', hi: 'हिन्दी अथवा अंग्रेज़ी में पूछें' },
+  after2: { en: 'Get a visual plot check', hi: 'दृश्य भूखंड जाँच प्राप्त करें' },
+  after3: { en: 'View the latest applicable amendment', hi: 'नवीनतम लागू संशोधन देखें' },
+  after4: { en: 'See exact rule citations', hi: 'सटीक नियम उद्धरण देखें' },
+  after5: { en: 'Download a citizen guidance slip', hi: 'नागरिक मार्गदर्शन पर्ची डाउनलोड करें' },
+
+  // ---- Landing: features --------------------------------------------------
+  featuresTitle: { en: 'Built for proof, not guesswork', hi: 'अनुमान नहीं, प्रमाण हेतु निर्मित' },
+  featuresSub: {
+    en: 'Every number on screen can be traced back to a rule, a table, and a page.',
+    hi: 'स्क्रीन पर दिखने वाले प्रत्येक अंक को एक नियम, एक तालिका और एक पृष्ठ तक खोजा जा सकता है।',
+  },
+  feat1Title: { en: 'Visual Plot Compliance', hi: 'दृश्य भूखंड अनुपालन' },
+  feat1Desc: {
+    en: 'See buildable and mandatory open spaces directly on the plot.',
+    hi: 'निर्माण योग्य एवं अनिवार्य खुले क्षेत्र सीधे भूखंड पर देखें।',
+  },
+  feat2Title: { en: 'Voice in Hindi and English', hi: 'हिन्दी एवं अंग्रेज़ी में वाणी' },
+  feat2Desc: {
+    en: 'Ask naturally and hear the answer in the same language.',
+    hi: 'सहज रूप से पूछें और उसी भाषा में उत्तर सुनें।',
+  },
+  feat3Title: { en: 'Latest Rule Version', hi: 'नवीनतम नियम संस्करण' },
+  feat3Desc: {
+    en: 'Know whether the March 2025 rules or the August 2026 amendment applies.',
+    hi: 'जानें कि मार्च 2025 के नियम लागू हैं अथवा अगस्त 2026 का संशोधन।',
+  },
+  feat4Title: { en: 'Proof Behind Every Answer', hi: 'प्रत्येक उत्तर के पीछे प्रमाण' },
+  feat4Desc: {
+    en: 'Every answer includes rule number, table, page, and exact source text.',
+    hi: 'प्रत्येक उत्तर में नियम संख्या, तालिका, पृष्ठ एवं यथावत् स्रोत पाठ सम्मिलित है।',
+  },
+
+  // ---- Landing: how it works ----------------------------------------------
+  howTitle: { en: 'Three steps to a cited answer', hi: 'उद्धृत उत्तर तक तीन चरण' },
+  how1Title: { en: 'Enter or speak plot details', hi: 'भूखंड विवरण दर्ज करें या बोलें' },
+  how1Desc: {
+    en: 'Plot area, road width, use — in Hindi or English, typed or spoken.',
+    hi: 'भूखंड क्षेत्रफल, सड़क की चौड़ाई, उपयोग — हिन्दी या अंग्रेज़ी में, लिखकर या बोलकर।',
+  },
+  how2Title: { en: 'NiyamSathi matches the latest applicable rule', hi: 'नियमसाथी नवीनतम लागू नियम से मिलान करता है' },
+  how2Desc: {
+    en: 'Conditions are checked row by row, and the version in force on your date wins.',
+    hi: 'शर्तें प्रविष्टि-दर-प्रविष्टि जाँची जाती हैं, और आपकी तिथि पर प्रभावी संस्करण मान्य होता है।',
+  },
+  how3Title: { en: 'Get a visual, cited compliance check', hi: 'दृश्य, उद्धृत अनुपालन जाँच प्राप्त करें' },
+  how3Desc: {
+    en: 'A plot diagram, a status, and the rule number behind every figure.',
+    hi: 'एक भूखंड आरेख, एक स्थिति, और प्रत्येक आँकड़े के पीछे का नियम क्रमांक।',
+  },
+  finalCtaHeadline: { en: 'Know the rule before you draw the plan.', hi: 'नक्शा बनाने से पहले नियम जानें।' },
+  finalCtaSub: {
+    en: 'A preliminary check takes under a minute and cites every figure it shows.',
+    hi: 'प्रारंभिक जाँच में एक मिनट से भी कम समय लगता है और यह प्रत्येक आँकड़े का स्रोत बताती है।',
+  },
+  landingDisclaimer: {
+    en: 'Preliminary guidance only. Final building approval remains with the competent authority.',
+    hi: 'केवल प्रारंभिक मार्गदर्शन। अंतिम भवन स्वीकृति सक्षम प्राधिकारी के अधिकार में ही रहेगी।',
+  },
+
+  // ---- Dashboard shell ----------------------------------------------------
+  dashboardTitle: { en: 'Plot Compliance Check', hi: 'भूखंड अनुपालन जाँच' },
+  panelPlotDetails: { en: 'Plot Details', hi: 'भूखंड विवरण' },
+  panelResults: { en: 'Rule Results', hi: 'नियम परिणाम' },
+  quickInputs: { en: 'Quick inputs', hi: 'त्वरित प्रविष्टियाँ' },
+  checkCompliance: { en: 'Check Compliance', hi: 'अनुपालन जाँचें' },
+  awaitingInput: { en: 'Awaiting plot details', hi: 'भूखंड विवरण की प्रतीक्षा' },
+  awaitingInputHelp: {
+    en: 'Enter a question or fill the quick inputs, then run a compliance check to see the plot map and cited results.',
+    hi: 'प्रश्न लिखें अथवा त्वरित प्रविष्टियाँ भरें, फिर भूखंड मानचित्र एवं उद्धृत परिणाम देखने हेतु अनुपालन जाँच चलाएँ।',
+  },
+  ruleVersionInForce: { en: 'Rule version', hi: 'नियम संस्करण' },
+
+  // ---- Voice --------------------------------------------------------------
+  askByVoice: { en: 'Ask by Voice', hi: 'बोलकर पूछें' },
+  listening: { en: 'Listening…', hi: 'सुन रहे हैं…' },
+  stopListening: { en: 'Stop listening', hi: 'सुनना रोकें' },
+  voiceHeard: { en: 'Heard', hi: 'सुना गया' },
+  voiceUnsupported: {
+    en: 'Voice input is not available in this browser. Typing works exactly the same.',
+    hi: 'इस ब्राउज़र में वाणी इनपुट उपलब्ध नहीं है। टाइप करने पर भी वही परिणाम मिलेगा।',
+  },
+  voiceError: { en: 'Could not hear that — please try again or type the question.', hi: 'सुनाई नहीं दिया — कृपया पुनः प्रयास करें अथवा प्रश्न लिखें।' },
+  speakAnswer: { en: 'Read answer aloud', hi: 'उत्तर सुनाएँ' },
+  stopSpeaking: { en: 'Stop reading', hi: 'सुनाना रोकें' },
+  speaking: { en: 'Reading answer…', hi: 'उत्तर सुनाया जा रहा है…' },
+
+  // ---- Map controls -------------------------------------------------------
+  mapResetView: { en: 'Reset view', hi: 'दृश्य रीसेट करें' },
+  mapToggleDimensions: { en: 'Toggle dimensions', hi: 'आयाम दिखाएँ या छिपाएँ' },
+  mapToggleCitations: { en: 'Toggle citations', hi: 'उद्धरण दिखाएँ या छिपाएँ' },
+  mapFullscreen: { en: 'Expand map', hi: 'मानचित्र बड़ा करें' },
+  mapExitFullscreen: { en: 'Close expanded map', hi: 'बड़ा मानचित्र बंद करें' },
+  mapPlanView: { en: 'Plan view', hi: 'समतल दृश्य' },
+  mapIsoView: { en: '3D view', hi: '3डी दृश्य' },
+  mapViewMode: { en: 'View mode', hi: 'दृश्य प्रकार' },
+
+  // ---- Why this rule ------------------------------------------------------
+  whyThisRule: { en: 'Why this rule?', hi: 'यह नियम क्यों?' },
+  whyDetected: { en: 'Plot conditions detected', hi: 'पहचानी गई भूखंड शर्तें' },
+  whyMatched: { en: 'Matching rule conditions', hi: 'मेल खाती नियम शर्तें' },
+  whyVersion: { en: 'Version selected', hi: 'चयनित संस्करण' },
+  whySupersede: { en: 'Why the newer record wins', hi: 'नवीन अभिलेख क्यों मान्य है' },
+  whySupersedeText: {
+    en: 'Both records match this plot, so the one in force on the selected date governs. The earlier value is kept on screen rather than hidden.',
+    hi: 'दोनों अभिलेख इस भूखंड पर लागू होते हैं, अतः चयनित तिथि पर प्रभावी अभिलेख मान्य है। पूर्व मान छिपाया नहीं गया, स्क्रीन पर रखा गया है।',
+  },
+  whyOnlyRecord: {
+    en: 'Only one record in the dataset matches these conditions on the selected date.',
+    hi: 'चयनित तिथि पर डेटासेट में केवल एक अभिलेख इन शर्तों से मेल खाता है।',
+  },
+
+  // ---- Misc ---------------------------------------------------------------
+  demoDataBadge: { en: 'Demo dataset — verify against official record', hi: 'डेमो डेटासेट — आधिकारिक अभिलेख से सत्यापित करें' },
+  trustDisclaimer: {
+    en: 'This tool provides preliminary rule references. Final building approval remains with the competent authority.',
+    hi: 'यह साधन प्रारंभिक नियम संदर्भ प्रदान करता है। अंतिम भवन स्वीकृति सक्षम प्राधिकारी के अधिकार में ही रहेगी।',
+  },
+  langToggle: { en: 'Language', hi: 'भाषा' },
 } satisfies Record<string, Bi>
 
 export type StringKey = keyof typeof S

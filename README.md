@@ -29,24 +29,34 @@ niyamsathi/
 
 ## Run it
 
-**Frontend only (default):**
 ```bash
 npm install
 npm run dev     # http://localhost:5173
 ```
 
-**Frontend + Backend together:**
-```bash
-npm install
-npm run dev:full    # Frontend on :5173, Backend on :5000
-```
+The app opens on a landing page; **Check Your Plot** opens the dashboard.
+Routes are hash-based and linkable — `#/check?demo=violation` opens the
+dashboard pre-loaded with a detected setback violation.
 
-**Backend server only:**
+**Frontend + backend together:**
 ```bash
-npm run backend:dev  # http://localhost:5000
+npm run dev:full    # frontend on :5173, backend API on :5000
 ```
 
 Other scripts: `npm run build`, `npm run typecheck`, `npm test`.
+
+See [`frontend/README.md`](frontend/README.md) for the design system, the
+component map, and the voice implementation.
+
+## Two experiences
+
+**Landing page** — hero with a live isometric plot visual (the real geometry
+engine, not a mockup), a before/after framing of the problem, four feature
+cards, and a three-step explanation.
+
+**Plot-check dashboard** — a three-column workspace: inputs and voice on the
+left, the compliance map in the centre, the verdict and cited results on the
+right, with the amendment timeline and the printable slip underneath.
 
 ## The dataset is demo data
 
@@ -57,9 +67,9 @@ the three JSON files with verified values before any real use.
 
 | File | What it holds |
 | --- | --- |
-| `src/data/versions.json` | The two rulebook versions and their effective dates |
-| `src/data/sources.json` | 12 rule/table citations with page numbers and bilingual excerpts |
-| `src/data/rules.json` | 59 condition→value rows citing those sources |
+| `frontend/src/data/versions.json` | The two rulebook versions and their effective dates |
+| `frontend/src/data/sources.json` | 12 rule/table citations with page numbers and bilingual excerpts |
+| `frontend/src/data/rules.json` | 59 condition→value rows citing those sources |
 
 A row carries only conditions and a value; the citation lives on the source it
 points at. Flip `excerptStatus` to `"verified"` on a source and its answers show
@@ -72,10 +82,10 @@ zones, the status check, and the slip's citations simultaneously.
 
 ## How an answer is produced
 
-1. **Extract** — `src/lib/parse.ts` reads plot area, road width, use, locality,
+1. **Extract** — `frontend/src/lib/parse.ts` reads plot area, road width, use, locality,
    proposed floors and the requested topics from the question. It handles both
    scripts, including Devanagari digits (`२००`) and units (`वर्ग मीटर`, `मीटर सड़क`).
-2. **Match** — `src/lib/engine.ts` filters rows whose conditions hold for those
+2. **Match** — `frontend/src/lib/engine.ts` filters rows whose conditions hold for those
    inputs and whose version was in force on the as-of date.
 3. **Resolve versions** — matches are grouped by version and the latest one wins.
    Older matches are kept and shown as "previous position", so an amendment is
@@ -107,21 +117,21 @@ tables.
 
 ## Visual Plot Compliance Map
 
-Below the Q&A, the quick form grows an optional "Visual Plot Compliance Map"
-section: plot width, plot depth, road-facing direction (N/S/E/W), and a
-citizen's *proposed* front/rear/left/right setbacks. Submitting draws an SVG
-plot diagram next to a traffic-light status card and an amendment timeline.
+The dashboard's left panel takes an optional plot geometry block:
+plot width, plot depth, road-facing direction (N/S/E/W), and a
+citizen's *proposed* front/rear/left/right setbacks. Running a check draws an SVG
+plot diagram (plan or 3D) beside a traffic-light verdict and an amendment timeline.
 
 **How it's built, and why it's split the way it is:**
 
-- `src/lib/geometry.ts` turns plot width/depth/road width/required setbacks
+- `frontend/src/lib/geometry.ts` turns plot width/depth/road width/required setbacks
   into SVG rectangles — pure number-in, rectangles-out, no dependency on the
   rule data types at all. The layout is fixed (road always along the bottom
   edge, front/rear/left/right zones always in the same screen position); a
   small compass badge shows the true road-facing direction instead of
   rotating the drawing, which keeps the geometry and the citation hit-areas
   simple regardless of orientation.
-- `src/lib/compliance.ts` turns the already-computed front/side/rear/floors
+- `frontend/src/lib/compliance.ts` turns the already-computed front/side/rear/floors
   `Answer`s plus the proposed values into one of four states — **Green**
   "Preliminary rule match", **Amber** "More information required", **Red**
   "Potential rule violation", **Grey** "Officer review required" — in that
@@ -136,17 +146,17 @@ plot diagram next to a traffic-light status card and an amendment timeline.
   square (`width = depth = √area`) and says so on the diagram — it is never
   presented as a surveyed footprint.
 - Click or hover a setback zone for its exact rule number, table, page,
-  source wording and version — pulled from the same `Answer` the AnswerCard
-  grid below is already showing.
+  source wording and version — pulled from the same `Answer` the result cards
+  panel beside it is already showing.
 - If a proposed setback is smaller than required, the shortfall is drawn as a
   red strip touching the buildable interior (not the outer edge) — it's the
   portion of the mandatory open space the proposal would actually build over.
 - "Check rules applicable on" in the timeline panel is the *same* date as the
   "Answer as on" control above the map — deliberately one piece of state, so
-  the map, the timeline and the AnswerCard grid can never disagree about which
+  the map, the timeline and the result cards can never disagree about which
   date is in force.
 - The "Download Compliance Slip" button renders a printable one-pager
-  (`src/components/ComplianceSlip.tsx`) with a reference code — a deterministic
+  (`frontend/src/components/ComplianceSlip.tsx`) with a reference code — a deterministic
   text code, not a scannable QR, since a demo running with no backend and no
   external APIs has no way to make a QR actually verifiable, and the code is
   labelled as such. `window.print()` with a CSS state (`.slip-open`) that hides
@@ -154,17 +164,19 @@ plot diagram next to a traffic-light status card and an amendment timeline.
 
 ## Demo scenarios
 
-Four buttons above the question box load a preset and submit it immediately:
+Four buttons at the top of the dashboard load a preset and run it
+immediately. Each is also directly linkable, so a demo can be opened on a
+finished check rather than an empty form:
 
-1. **200 sq m Residential Plot, 9 m Road** — a clean rule lookup with real
+1. **200 sq m Residential Plot, 9 m Road** (`#/check?demo=standard`) — a clean rule lookup with real
    (non-illustrative) plot dimensions, so the map shows an accurate footprint.
-2. **450 sq m Plot, 9 m Road — Aug 2026 Amendment** — the amendment governs
+2. **450 sq m Plot, 9 m Road — Aug 2026 Amendment** (`#/check?demo=amendment`) — the amendment governs
    (plot ≤ 500 sq m); the timeline highlights it and shows the superseded
    March 2025 figures underneath.
-3. **Potential Violation** — a proposed front setback below the required
+3. **Potential Violation** (`#/check?demo=violation`) — a proposed front setback below the required
    value; the map draws the red encroachment strip and the status card turns
    Red.
-4. **Missing Details** — only plot area is given; front setback and max
+4. **Missing Details** (`#/check?demo=missing`) — only plot area is given; front setback and max
    floors come back "More information needed" instead of a guessed value, and
    the status card turns Amber.
 
@@ -180,19 +192,26 @@ exactly one row:
 
 ## Tests
 
-`npm test` runs two suites with no browser needed:
+`npm test` runs two suites, ~200 assertions, no browser needed:
 
-- `scripts/selftest.ts` — parsing, matching, version resolution, derived
-  figures, missing-input handling, slab boundaries, plus the geometry
+- `frontend/scripts/selftest.ts` — parsing, matching, version resolution,
+  derived figures, missing-input handling, slab boundaries, the geometry
   violation-strip math, the null-buildable clamp, the compliance-status
   priority order (one case per state), and reference-code determinism.
-- `scripts/rendertest.tsx` — renders every component (including the map,
-  status card, timeline, compliance slip and demo selector), in both
-  languages, to static markup and asserts the citations, badges and
-  disclaimers appear — and runs all four demo scenarios end-to-end through
-  the real matching/geometry/compliance pipeline.
+- `frontend/scripts/rendertest.tsx` — server-renders the landing page, the
+  dashboard (empty *and* pre-loaded with each of the four demo scenarios), and
+  every component, in both languages. It asserts that citations, demo-data
+  labelling and the "not an approval" disclaimers are present in all of them.
+  Running through `renderToStaticMarkup` also pins the SSR-safety contract in
+  `lib/hooks.ts`: anything touching `window` during render fails here rather
+  than in a user's browser.
 
 ## Stack
 
-React 18 · TypeScript · Vite 5 · Tailwind CSS v4 · lucide-react. No backend —
-the dataset is local JSON, so answers are instant and the app runs offline.
+React 18 · TypeScript · Vite 5 · Tailwind CSS v4 · lucide-react. The dataset is
+local JSON, so answers are instant and the dashboard runs offline.
+
+No router, charting, 3D or PDF library: routing is a hash-synced view flag, the
+isometric view is hand-rolled SVG over the existing geometry math, and the
+compliance slip prints through a CSS print state rather than a PDF renderer.
+Voice uses the browser's native Web Speech API.

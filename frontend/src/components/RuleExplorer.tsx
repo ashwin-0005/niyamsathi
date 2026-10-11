@@ -4,8 +4,8 @@ import { ALL_TOPICS, RULES, VERSIONS, formatValue, pageLabel, sourceOf, versionO
 import { TOPIC_LABEL, USE_LABEL, bi, formatDate, t } from '../lib/i18n'
 import type { Lang, Topic, Use } from '../lib/types'
 
-const pillOn = 'focus-ring rounded-full bg-ink-900 px-3 py-1.5 text-xs font-semibold text-white'
-const pillOff = 'focus-ring rounded-full border border-ink-200 px-3 py-1.5 text-xs text-ink-600 transition hover:border-ink-400'
+const pillOn = 'chip chip-on focus-ring px-3 py-1.5'
+const pillOff = 'chip chip-button focus-ring px-3 py-1.5'
 
 export default function RuleExplorer({ lang }: { lang: Lang }) {
   const [query, setQuery] = useState('')
@@ -30,22 +30,22 @@ export default function RuleExplorer({ lang }: { lang: Lang }) {
   }, [query, topic, versionId])
 
   return (
-    <section className="card overflow-hidden">
-      <div className="border-b border-ink-100 bg-ink-50/50 p-5">
-        <p className="flex items-center gap-2 text-sm font-semibold text-ink-900">
-          <Database className="h-4 w-4 text-ink-400" />
+    <section className="panel overflow-hidden">
+      <div className="border-b border-line bg-white/[0.02] p-5">
+        <p className="flex items-center gap-2 text-sm font-semibold text-paper">
+          <Database className="h-4 w-4 text-faint" />
           {t('explorerTab', lang)}
-          <span className="numeric font-normal text-ink-400">
+          <span className="numeric font-normal text-faint">
             — {rows.length} / {RULES.length} {t('rows', lang)}
           </span>
         </p>
         <div className="relative mt-3">
-          <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-ink-400" />
+          <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-faint" />
           <input
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder={t('searchRules', lang)}
-            className="focus-ring w-full rounded-xl border border-ink-200 bg-white py-2.5 pl-9 pr-3 text-sm transition hover:border-ink-400"
+            className="field py-2.5 pl-9 pr-3"
           />
         </div>
         <div className="mt-3 flex flex-wrap gap-2">
@@ -72,7 +72,7 @@ export default function RuleExplorer({ lang }: { lang: Lang }) {
 
       <div className="overflow-x-auto">
         <table className="w-full min-w-[46rem] text-left text-sm">
-          <thead className="border-b border-ink-100 bg-white text-xs uppercase tracking-wider text-ink-400">
+          <thead className="border-b border-line bg-white/[0.02] text-xs uppercase tracking-[0.1em] text-faint">
             <tr>
               <th className="px-5 py-3 font-semibold">{t('topicsAsked', lang)}</th>
               <th className="px-5 py-3 font-semibold">{t('appliesWhen', lang)}</th>
@@ -81,26 +81,26 @@ export default function RuleExplorer({ lang }: { lang: Lang }) {
               <th className="px-5 py-3 font-semibold">{t('version', lang)}</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-ink-100">
+          <tbody className="divide-y divide-line">
             {rows.map(({ rule, source, version }) => (
-              <tr key={rule.id} className="align-top transition hover:bg-ink-50/60">
+              <tr key={rule.id} className="align-top transition hover:bg-white/[0.03]">
                 <td className="px-5 py-3">
-                  <span className="font-medium text-ink-900">{TOPIC_LABEL[rule.topic][lang]}</span>
-                  <span className="mt-0.5 block text-xs text-ink-400">
+                  <span className="font-medium text-paper">{TOPIC_LABEL[rule.topic][lang]}</span>
+                  <span className="mt-0.5 block text-xs text-faint">
                     {rule.use.map((u: Use) => USE_LABEL[u][lang]).join(', ')}
                   </span>
                 </td>
-                <td className="max-w-xs px-5 py-3 text-ink-600">{bi(rule.conditionText, lang)}</td>
-                <td className="numeric px-5 py-3 font-semibold text-ink-900">{formatValue(rule.value, lang)}</td>
-                <td className="numeric px-5 py-3 text-ink-600">
+                <td className="max-w-xs px-5 py-3 text-muted">{bi(rule.conditionText, lang)}</td>
+                <td className="numeric px-5 py-3 font-semibold text-paper">{formatValue(rule.value, lang)}</td>
+                <td className="numeric px-5 py-3 text-muted">
                   {source.ruleNumber}
-                  <span className="mt-0.5 block text-xs text-ink-400">
+                  <span className="mt-0.5 block text-xs text-faint">
                     {source.tableNumber} · {t('page', lang)} {pageLabel(source)}
                   </span>
                 </td>
-                <td className="px-5 py-3 text-xs text-ink-600">
+                <td className="px-5 py-3 text-xs text-muted">
                   {bi(version.shortLabel, lang)}
-                  <span className="numeric mt-0.5 block text-ink-400">
+                  <span className="numeric mt-0.5 block text-faint">
                     {formatDate(version.effectiveDate, lang)}
                   </span>
                 </td>
@@ -108,7 +108,7 @@ export default function RuleExplorer({ lang }: { lang: Lang }) {
             ))}
             {rows.length === 0 && (
               <tr>
-                <td colSpan={5} className="px-5 py-10 text-center text-ink-400">
+                <td colSpan={5} className="px-5 py-10 text-center text-faint">
                   {t('noRule', lang)}
                 </td>
               </tr>
