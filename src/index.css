@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Noto Sans Devanagari", ui-sans-serif, system-ui, sans-serif;
+  --color-ink-50: #f4f6fb;
+  --color-ink-100: #e6eaf4;
+  --color-ink-200: #c8d1e6;
+  --color-ink-400: #7083ad;
+  --color-ink-600: #3b4b73;
+  --color-ink-800: #1e2a4a;
+  --color-ink-900: #141d35;
+  --color-ink-950: #0b1223;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  @apply bg-ink-50 text-ink-900 antialiased;
+  font-feature-settings: "cv02", "cv03", "cv04";
+}
+
+:lang(hi) { font-family: "Noto Sans Devanagari", "Inter", sans-serif; }
+
+/* Measurement figures read better with tabular, non-ligating digits. */
+.numeric { font-variant-numeric: tabular-nums; letter-spacing: -0.01em; }
+
+.card {
+  @apply rounded-2xl border border-ink-100 bg-white shadow-sm;
+}
+
+.chip {
+  @apply inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium;
+}
+
+.focus-ring {
+  @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-ink-400 focus-visible:ring-offset-2;
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.rise { animation: rise 0.35s cubic-bezier(0.16, 1, 0.3, 1) both; }
+
+@media print {
+  .no-print { display: none !important; }
+  body { @apply bg-white; }
+  .card { @apply border-ink-200 shadow-none; break-inside: avoid; }
+}
+
+/* Citizen Compliance Slip: hidden on screen by default, shown as an on-screen
+   modal for review while open, and — only while open — the only thing that
+   prints. This never fires during a normal window.print() call, so the
+   existing Print button's "print whatever's on screen" behaviour is
+   untouched when the slip isn't open. */
+.slip-root {
+  display: none;
+}
+.slip-open .slip-root {
+  display: block;
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  overflow-y: auto;
+  background: rgba(11, 18, 35, 0.6);
+  padding: 2rem 1rem;
+}
+
+@media print {
+  .slip-open .app-root {
+    display: none !important;
+  }
+  .slip-open .slip-root {
+    position: static;
+    background: none;
+    padding: 0;
+    overflow: visible;
+  }
+}

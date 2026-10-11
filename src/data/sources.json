@@ -1,0 +1,173 @@
+[
+  {
+    "id": "s-r25-t8",
+    "versionId": "v-2025-03",
+    "ruleNumber": "Rule 25(2)",
+    "ruleTitle": { "en": "Setbacks — front open space", "hi": "सेटबैक — सामने का खुला स्थान" },
+    "tableNumber": "Table 8",
+    "tableTitle": { "en": "Minimum front setback by plot area and abutting road width", "hi": "भूखंड क्षेत्रफल एवं लगी सड़क की चौड़ाई अनुसार न्यूनतम फ्रंट सेटबैक" },
+    "pageNumber": 42,
+    "excerptStatus": "placeholder",
+    "excerpt": {
+      "en": "25(2) Every building shall have a front open space (setback) measured from the road boundary of the plot, of not less than the width specified in Table 8. Where the plot abuts more than one road, the setback for the wider road shall apply to that frontage. No projection other than those permitted under Rule 42 shall be allowed within the front setback.",
+      "hi": "25(2) प्रत्येक भवन में भूखंड की सड़क सीमा से मापी गई सामने की खुली जगह (सेटबैक) तालिका 8 में निर्दिष्ट चौड़ाई से कम नहीं होगी। जहाँ भूखंड एक से अधिक सड़कों से लगा हो, वहाँ उस भाग के लिए चौड़ी सड़क का सेटबैक लागू होगा। नियम 42 के अंतर्गत अनुमत प्रक्षेपणों के अतिरिक्त कोई भी निर्माण फ्रंट सेटबैक में अनुमत नहीं होगा।"
+    }
+  },
+  {
+    "id": "s-r25-t9",
+    "versionId": "v-2025-03",
+    "ruleNumber": "Rule 25(4)",
+    "ruleTitle": { "en": "Setbacks — side open space", "hi": "सेटबैक — बगल का खुला स्थान" },
+    "tableNumber": "Table 9",
+    "tableTitle": { "en": "Minimum side setback by plot area", "hi": "भूखंड क्षेत्रफल अनुसार न्यूनतम साइड सेटबैक" },
+    "pageNumber": 43,
+    "excerptStatus": "placeholder",
+    "excerpt": {
+      "en": "25(4) Side open spaces shall be provided on both sides of the building as specified in Table 9. For plots up to 100 sq m the side open space may be nil on one or both sides, provided that habitable rooms derive light and ventilation in accordance with Rule 25(6) and that no opening is created on the common boundary wall without the written consent of the adjoining owner.",
+      "hi": "25(4) भवन के दोनों ओर तालिका 9 में निर्दिष्ट अनुसार बगल का खुला स्थान छोड़ा जाएगा। 100 वर्ग मीटर तक के भूखंडों हेतु एक या दोनों ओर साइड खुला स्थान शून्य रखा जा सकता है, बशर्ते कि निवास योग्य कक्षों को नियम 25(6) के अनुसार प्रकाश एवं वायु प्राप्त हो तथा संलग्न स्वामी की लिखित सहमति के बिना साझा सीमा दीवार पर कोई द्वार-खिड़की न बनाई जाए।"
+    }
+  },
+  {
+    "id": "s-r25-t10",
+    "versionId": "v-2025-03",
+    "ruleNumber": "Rule 25(5)",
+    "ruleTitle": { "en": "Setbacks — rear open space", "hi": "सेटबैक — पीछे का खुला स्थान" },
+    "tableNumber": "Table 10",
+    "tableTitle": { "en": "Minimum rear setback by plot area", "hi": "भूखंड क्षेत्रफल अनुसार न्यूनतम रियर सेटबैक" },
+    "pageNumber": 44,
+    "excerptStatus": "placeholder",
+    "excerpt": {
+      "en": "25(5) A rear open space of not less than the width specified in Table 10 shall be left throughout the width of the plot. Where the rear boundary abuts a public open space or a nala, the Authority may permit a reduction of not more than one-third of the required rear setback, recording reasons in writing.",
+      "hi": "25(5) भूखंड की पूरी चौड़ाई में तालिका 10 में निर्दिष्ट चौड़ाई से कम नहीं, पीछे का खुला स्थान छोड़ा जाएगा। जहाँ पिछली सीमा किसी सार्वजनिक खुले स्थान अथवा नाले से लगी हो, वहाँ प्राधिकारी लिखित में कारण अंकित कर अपेक्षित रियर सेटबैक में अधिकतम एक-तिहाई की छूट दे सकेगा।"
+    }
+  },
+  {
+    "id": "s-r29-t11",
+    "versionId": "v-2025-03",
+    "ruleNumber": "Rule 29",
+    "ruleTitle": { "en": "Maximum permissible ground coverage", "hi": "अधिकतम अनुमेय भूतल आच्छादन" },
+    "tableNumber": "Table 11",
+    "tableTitle": { "en": "Ground coverage by plot area and use", "hi": "भूखंड क्षेत्रफल एवं उपयोग अनुसार भूतल आच्छादन" },
+    "pageNumber": 47,
+    "excerptStatus": "placeholder",
+    "excerpt": {
+      "en": "29. The ground coverage of any building shall not exceed the percentage of the plot area specified in Table 11. Areas covered by a ramp, a watchman cabin not exceeding 3 sq m, and the projection of a cantilevered balcony shall not be counted towards ground coverage.",
+      "hi": "29. किसी भी भवन का भूतल आच्छादन तालिका 11 में निर्दिष्ट भूखंड क्षेत्रफल के प्रतिशत से अधिक नहीं होगा। रैम्प, 3 वर्ग मीटर से अनधिक चौकीदार कक्ष तथा कैंटिलीवर बालकनी के प्रक्षेपण से आच्छादित क्षेत्र भूतल आच्छादन में नहीं गिना जाएगा।"
+    }
+  },
+  {
+    "id": "s-r30-t12",
+    "versionId": "v-2025-03",
+    "ruleNumber": "Rule 30",
+    "ruleTitle": { "en": "Floor Area Ratio — residential buildings", "hi": "फर्श क्षेत्र अनुपात — आवासीय भवन" },
+    "tableNumber": "Table 12",
+    "tableTitle": { "en": "Permissible FAR for residential use by abutting road width", "hi": "लगी सड़क की चौड़ाई अनुसार आवासीय उपयोग हेतु अनुमेय एफ.ए.आर." },
+    "pageNumber": 49,
+    "excerptStatus": "placeholder",
+    "excerpt": {
+      "en": "30. The Floor Area Ratio for a residential building shall not exceed the figure specified in Table 12 against the width of the road on which the plot abuts. Basement used exclusively for parking or services, stilt parking, and the area of staircase and lift wells shall be excluded while computing the Floor Area Ratio.",
+      "hi": "30. आवासीय भवन हेतु फर्श क्षेत्र अनुपात, उस सड़क की चौड़ाई के सम्मुख तालिका 12 में निर्दिष्ट मान से अधिक नहीं होगा जिससे भूखंड लगा है। केवल पार्किंग अथवा सेवाओं हेतु प्रयुक्त तलघर, स्टिल्ट पार्किंग तथा सीढ़ी एवं लिफ्ट शाफ्ट का क्षेत्र एफ.ए.आर. की गणना में सम्मिलित नहीं किया जाएगा।"
+    }
+  },
+  {
+    "id": "s-r31-t13",
+    "versionId": "v-2025-03",
+    "ruleNumber": "Rule 31",
+    "ruleTitle": { "en": "Floor Area Ratio — commercial buildings", "hi": "फर्श क्षेत्र अनुपात — वाणिज्यिक भवन" },
+    "tableNumber": "Table 13",
+    "tableTitle": { "en": "Permissible FAR for commercial use by abutting road width", "hi": "लगी सड़क की चौड़ाई अनुसार वाणिज्यिक उपयोग हेतु अनुमेय एफ.ए.आर." },
+    "pageNumber": 51,
+    "excerptStatus": "placeholder",
+    "excerpt": {
+      "en": "31. No commercial building shall be permitted on a plot abutting a road of width less than 9 metres, and the Floor Area Ratio shall not exceed the figure specified in Table 13. Additional FAR under the Transferable Development Rights scheme, if any, shall be governed by a separate notification.",
+      "hi": "31. 9 मीटर से कम चौड़ाई की सड़क से लगे भूखंड पर कोई वाणिज्यिक भवन अनुमत नहीं होगा तथा फर्श क्षेत्र अनुपात तालिका 13 में निर्दिष्ट मान से अधिक नहीं होगा। हस्तांतरणीय विकास अधिकार योजना के अंतर्गत अतिरिक्त एफ.ए.आर., यदि कोई हो, पृथक अधिसूचना द्वारा शासित होगा।"
+    }
+  },
+  {
+    "id": "s-r32-t14",
+    "versionId": "v-2025-03",
+    "ruleNumber": "Rule 32",
+    "ruleTitle": { "en": "Floor Area Ratio — mixed use buildings", "hi": "फर्श क्षेत्र अनुपात — मिश्रित उपयोग भवन" },
+    "tableNumber": "Table 14",
+    "tableTitle": { "en": "Permissible FAR for mixed use by abutting road width", "hi": "लगी सड़क की चौड़ाई अनुसार मिश्रित उपयोग हेतु अनुमेय एफ.ए.आर." },
+    "pageNumber": 53,
+    "excerptStatus": "placeholder",
+    "excerpt": {
+      "en": "32. In a mixed use building the non-residential component shall not exceed forty percent of the total built-up area, and the Floor Area Ratio shall not exceed the figure specified in Table 14. The non-residential component shall be confined to the ground and first floors.",
+      "hi": "32. मिश्रित उपयोग भवन में गैर-आवासीय घटक कुल निर्मित क्षेत्र के चालीस प्रतिशत से अधिक नहीं होगा तथा फर्श क्षेत्र अनुपात तालिका 14 में निर्दिष्ट मान से अधिक नहीं होगा। गैर-आवासीय घटक भूतल एवं प्रथम तल तक सीमित रहेगा।"
+    }
+  },
+  {
+    "id": "s-r36-t16",
+    "versionId": "v-2025-03",
+    "ruleNumber": "Rule 36",
+    "ruleTitle": { "en": "Height of building and number of floors", "hi": "भवन की ऊँचाई एवं तलों की संख्या" },
+    "tableNumber": "Table 16",
+    "tableTitle": { "en": "Maximum number of floors by abutting road width", "hi": "लगी सड़क की चौड़ाई अनुसार अधिकतम तलों की संख्या" },
+    "pageNumber": 58,
+    "excerptStatus": "placeholder",
+    "excerpt": {
+      "en": "36. The maximum number of floors and the height of a building shall be regulated by the width of the abutting road as specified in Table 16. A building exceeding 15 metres in height shall not be permitted without the No Objection Certificate of the Fire Service under Rule 70, and a building exceeding 30 metres shall additionally require clearance from the Airports Authority where applicable.",
+      "hi": "36. भवन के अधिकतम तलों की संख्या एवं ऊँचाई, तालिका 16 में निर्दिष्ट अनुसार लगी सड़क की चौड़ाई द्वारा नियंत्रित होगी। 15 मीटर से अधिक ऊँचाई का भवन, नियम 70 के अंतर्गत अग्निशमन सेवा के अनापत्ति प्रमाण पत्र के बिना अनुमत नहीं होगा तथा 30 मीटर से अधिक ऊँचाई हेतु, जहाँ लागू हो, विमानपत्तन प्राधिकरण से अतिरिक्त अनुमति आवश्यक होगी।"
+    }
+  },
+  {
+    "id": "s-r90-t24",
+    "versionId": "v-2025-03",
+    "ruleNumber": "Rule 90(1)",
+    "ruleTitle": { "en": "Fee for building permission", "hi": "भवन अनुज्ञा हेतु शुल्क" },
+    "tableNumber": "Table 24",
+    "tableTitle": { "en": "Building permission fee per sq m of plot area", "hi": "भूखंड क्षेत्रफल के प्रति वर्ग मीटर भवन अनुज्ञा शुल्क" },
+    "pageNumber": 96,
+    "excerptStatus": "placeholder",
+    "excerpt": {
+      "en": "90(1) Every application for building permission shall be accompanied by a fee calculated at the rate specified in Table 24 on the area of the plot, subject to a minimum of Rupees one thousand. The fee once paid shall not be refundable, but shall be adjustable against a fresh application made within one year where permission has been refused for reasons not attributable to the applicant.",
+      "hi": "90(1) भवन अनुज्ञा हेतु प्रत्येक आवेदन के साथ, भूखंड के क्षेत्रफल पर तालिका 24 में निर्दिष्ट दर से गणना किया गया शुल्क, न्यूनतम एक हजार रुपये के अध्यधीन, संलग्न किया जाएगा। एक बार जमा शुल्क वापसी योग्य नहीं होगा, किन्तु जहाँ आवेदक के कारणों से भिन्न कारणों से अनुज्ञा अस्वीकृत की गई हो, वहाँ एक वर्ष के भीतर किए गए नवीन आवेदन में समायोज्य होगा।"
+    }
+  },
+  {
+    "id": "s-amd-t8a",
+    "versionId": "v-2026-08",
+    "ruleNumber": "Rule 25(5A) (as amended)",
+    "ruleTitle": { "en": "Setbacks for plots up to 500 sq m — amended", "hi": "500 वर्ग मीटर तक के भूखंडों हेतु सेटबैक — संशोधित" },
+    "tableNumber": "Table 8-A",
+    "tableTitle": { "en": "Consolidated setbacks for plots up to 500 sq m", "hi": "500 वर्ग मीटर तक के भूखंडों हेतु समेकित सेटबैक" },
+    "pageNumber": 42,
+    "pageSuffix": "A",
+    "excerptStatus": "placeholder",
+    "excerpt": {
+      "en": "In Rule 25 of the said rules, after sub-rule (5), the following shall be inserted, namely — '(5A) Notwithstanding anything contained in Tables 8, 9 and 10, in respect of a plot having an area up to 500 square metres the front, side and rear open spaces shall be as specified in Table 8-A.' This amendment shall come into force from the date of its publication in the Madhya Pradesh Gazette.",
+      "hi": "उक्त नियमों के नियम 25 में, उप-नियम (5) के पश्चात् निम्नलिखित अंतःस्थापित किया जाएगा, अर्थात् — '(5क) तालिका 8, 9 एवं 10 में अंतर्विष्ट किसी बात के होते हुए भी, 500 वर्ग मीटर तक के क्षेत्रफल वाले भूखंड के संबंध में सामने, बगल एवं पीछे का खुला स्थान तालिका 8-क में निर्दिष्ट अनुसार होगा।' यह संशोधन मध्यप्रदेश राजपत्र में प्रकाशन की तिथि से प्रवृत्त होगा।"
+    }
+  },
+  {
+    "id": "s-amd-t12a",
+    "versionId": "v-2026-08",
+    "ruleNumber": "Rules 30, 31, 32 & 36 (as amended)",
+    "ruleTitle": { "en": "FAR, ground coverage and floors for plots up to 500 sq m — amended", "hi": "500 वर्ग मीटर तक के भूखंडों हेतु एफ.ए.आर., भूतल आच्छादन एवं तल — संशोधित" },
+    "tableNumber": "Table 12-A",
+    "tableTitle": { "en": "FAR, ground coverage and maximum floors for plots up to 500 sq m", "hi": "500 वर्ग मीटर तक के भूखंडों हेतु एफ.ए.आर., भूतल आच्छादन एवं अधिकतम तल" },
+    "pageNumber": 49,
+    "pageSuffix": "A",
+    "excerptStatus": "placeholder",
+    "excerpt": {
+      "en": "In respect of a plot having an area up to 500 square metres, the Floor Area Ratio, the maximum permissible ground coverage and the maximum number of floors shall be as specified in Table 12-A, in supersession of the corresponding entries in Tables 11, 12, 13, 14 and 16. The relaxation granted under this table shall not apply where the plot falls within a heritage precinct notified under Rule 82 or within the airport funnel zone.",
+      "hi": "500 वर्ग मीटर तक के क्षेत्रफल वाले भूखंड के संबंध में फर्श क्षेत्र अनुपात, अधिकतम अनुमेय भूतल आच्छादन एवं अधिकतम तलों की संख्या, तालिका 11, 12, 13, 14 एवं 16 की तत्संबंधी प्रविष्टियों के अधिक्रमण में, तालिका 12-क में निर्दिष्ट अनुसार होगी। इस तालिका के अंतर्गत दी गई छूट वहाँ लागू नहीं होगी जहाँ भूखंड नियम 82 के अंतर्गत अधिसूचित धरोहर क्षेत्र अथवा विमानपत्तन फनल क्षेत्र में आता हो।"
+    }
+  },
+  {
+    "id": "s-amd-t24a",
+    "versionId": "v-2026-08",
+    "ruleNumber": "Rule 90 (as amended)",
+    "ruleTitle": { "en": "Revised building permission fee for plots up to 500 sq m", "hi": "500 वर्ग मीटर तक के भूखंडों हेतु संशोधित भवन अनुज्ञा शुल्क" },
+    "tableNumber": "Table 24-A",
+    "tableTitle": { "en": "Revised permission fee per sq m of plot area", "hi": "भूखंड क्षेत्रफल के प्रति वर्ग मीटर संशोधित अनुज्ञा शुल्क" },
+    "pageNumber": 96,
+    "pageSuffix": "A",
+    "excerptStatus": "placeholder",
+    "excerpt": {
+      "en": "For the entries in Table 24 relating to a plot having an area up to 500 square metres, the entries specified in Table 24-A shall be substituted. The minimum fee of Rupees one thousand under Rule 90(1) shall continue to apply.",
+      "hi": "तालिका 24 की उन प्रविष्टियों के स्थान पर, जो 500 वर्ग मीटर तक के क्षेत्रफल वाले भूखंड से संबंधित हैं, तालिका 24-क में निर्दिष्ट प्रविष्टियाँ प्रतिस्थापित की जाएँगी। नियम 90(1) के अंतर्गत एक हजार रुपये का न्यूनतम शुल्क यथावत् लागू रहेगा।"
+    }
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "v-2025-03",
+    "label": { "en": "Consolidated rulebook (current through 31 March 2025)", "hi": "समेकित नियम पुस्तिका (31 मार्च 2025 तक अद्यतन)" },
+    "shortLabel": { "en": "Consolidated to Mar 2025", "hi": "मार्च 2025 तक समेकित" },
+    "effectiveDate": "2025-03-31",
+    "notification": "MP Bhumi Vikas Rules, 2012 — consolidated reprint, 108 pages",
+    "scope": { "en": "All plots, all uses", "hi": "सभी भूखंड, सभी उपयोग" },
+    "verified": false
+  },
+  {
+    "id": "v-2026-08",
+    "label": { "en": "Amendment dated 28 Aug 2026", "hi": "28 अगस्त 2026 का संशोधन" },
+    "shortLabel": { "en": "Amendment 28 Aug 2026", "hi": "संशोधन 28 अग 2026" },
+    "effectiveDate": "2026-08-28",
+    "notification": "Notification No. F-3-45-2026-32-XXV, Urban Development & Housing Department, Govt. of M.P.",
+    "scope": { "en": "Plots up to 500 sq m only", "hi": "केवल 500 वर्ग मीटर तक के भूखंड" },
+    "verified": false
+  }
+]

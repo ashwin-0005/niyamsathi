@@ -1,0 +1,433 @@
+[
+  {
+    "id": "fs-b-01", "topic": "front_setback", "sourceId": "s-r25-t8",
+    "use": ["residential", "commercial", "mixed"],
+    "conditions": { "plotAreaMin": null, "plotAreaMax": 100, "roadWidthMin": null, "roadWidthMax": null },
+    "value": { "kind": "length", "number": 1.5, "unit": "m" },
+    "conditionText": { "en": "Plot up to 100 sq m — any road width", "hi": "100 वर्ग मीटर तक का भूखंड — कोई भी सड़क चौड़ाई" }
+  },
+  {
+    "id": "fs-b-02", "topic": "front_setback", "sourceId": "s-r25-t8",
+    "use": ["residential", "commercial", "mixed"],
+    "conditions": { "plotAreaMin": 100, "plotAreaMax": 250, "roadWidthMin": null, "roadWidthMax": 12 },
+    "value": { "kind": "length", "number": 3, "unit": "m" },
+    "conditionText": { "en": "Plot above 100 and up to 250 sq m — road less than 12 m", "hi": "100 से अधिक तथा 250 वर्ग मीटर तक का भूखंड — सड़क 12 मीटर से कम" }
+  },
+  {
+    "id": "fs-b-03", "topic": "front_setback", "sourceId": "s-r25-t8",
+    "use": ["residential", "commercial", "mixed"],
+    "conditions": { "plotAreaMin": 100, "plotAreaMax": 250, "roadWidthMin": 12, "roadWidthMax": null },
+    "value": { "kind": "length", "number": 4.5, "unit": "m" },
+    "conditionText": { "en": "Plot above 100 and up to 250 sq m — road 12 m and above", "hi": "100 से अधिक तथा 250 वर्ग मीटर तक का भूखंड — सड़क 12 मीटर या अधिक" }
+  },
+  {
+    "id": "fs-b-04", "topic": "front_setback", "sourceId": "s-r25-t8",
+    "use": ["residential", "commercial", "mixed"],
+    "conditions": { "plotAreaMin": 250, "plotAreaMax": 500, "roadWidthMin": null, "roadWidthMax": 12 },
+    "value": { "kind": "length", "number": 4.5, "unit": "m" },
+    "conditionText": { "en": "Plot above 250 and up to 500 sq m — road less than 12 m", "hi": "250 से अधिक तथा 500 वर्ग मीटर तक का भूखंड — सड़क 12 मीटर से कम" }
+  },
+  {
+    "id": "fs-b-05", "topic": "front_setback", "sourceId": "s-r25-t8",
+    "use": ["residential", "commercial", "mixed"],
+    "conditions": { "plotAreaMin": 250, "plotAreaMax": 500, "roadWidthMin": 12, "roadWidthMax": null },
+    "value": { "kind": "length", "number": 6, "unit": "m" },
+    "conditionText": { "en": "Plot above 250 and up to 500 sq m — road 12 m and above", "hi": "250 से अधिक तथा 500 वर्ग मीटर तक का भूखंड — सड़क 12 मीटर या अधिक" }
+  },
+  {
+    "id": "fs-b-06", "topic": "front_setback", "sourceId": "s-r25-t8",
+    "use": ["residential", "commercial", "mixed"],
+    "conditions": { "plotAreaMin": 500, "plotAreaMax": 1000, "roadWidthMin": null, "roadWidthMax": null },
+    "value": { "kind": "length", "number": 6, "unit": "m" },
+    "conditionText": { "en": "Plot above 500 and up to 1000 sq m — any road width", "hi": "500 से अधिक तथा 1000 वर्ग मीटर तक का भूखंड — कोई भी सड़क चौड़ाई" }
+  },
+  {
+    "id": "fs-b-07", "topic": "front_setback", "sourceId": "s-r25-t8",
+    "use": ["residential", "commercial", "mixed"],
+    "conditions": { "plotAreaMin": 1000, "plotAreaMax": null, "roadWidthMin": null, "roadWidthMax": null },
+    "value": { "kind": "length", "number": 7.5, "unit": "m" },
+    "conditionText": { "en": "Plot above 1000 sq m — any road width", "hi": "1000 वर्ग मीटर से अधिक का भूखंड — कोई भी सड़क चौड़ाई" }
+  },
+  {
+    "id": "ss-b-01", "topic": "side_setback", "sourceId": "s-r25-t9",
+    "use": ["residential", "commercial", "mixed"],
+    "conditions": { "plotAreaMin": null, "plotAreaMax": 100, "roadWidthMin": null, "roadWidthMax": null },
+    "value": { "kind": "length", "number": 0, "unit": "m", "label": { "en": "Nil (may be zero)", "hi": "शून्य (नहीं छोड़ना अनिवार्य नहीं)" } },
+    "conditionText": { "en": "Plot up to 100 sq m", "hi": "100 वर्ग मीटर तक का भूखंड" },
+    "note": { "en": "Permitted only if habitable rooms meet light and ventilation under Rule 25(6) and no opening is made on the common boundary wall.", "hi": "केवल तभी अनुमत जब निवास योग्य कक्ष नियम 25(6) के प्रकाश एवं वायु मानक पूरे करें तथा साझा सीमा दीवार पर कोई द्वार-खिड़की न हो।" }
+  },
+  {
+    "id": "ss-b-02", "topic": "side_setback", "sourceId": "s-r25-t9",
+    "use": ["residential", "commercial", "mixed"],
+    "conditions": { "plotAreaMin": 100, "plotAreaMax": 250, "roadWidthMin": null, "roadWidthMax": null },
+    "value": { "kind": "length", "number": 1.5, "unit": "m" },
+    "conditionText": { "en": "Plot above 100 and up to 250 sq m", "hi": "100 से अधिक तथा 250 वर्ग मीटर तक का भूखंड" },
+    "note": { "en": "To be left on both sides of the building.", "hi": "भवन के दोनों ओर छोड़ा जाना है।" }
+  },
+  {
+    "id": "ss-b-03", "topic": "side_setback", "sourceId": "s-r25-t9",
+    "use": ["residential", "commercial", "mixed"],
+    "conditions": { "plotAreaMin": 250, "plotAreaMax": 1000, "roadWidthMin": null, "roadWidthMax": null },
+    "value": { "kind": "length", "number": 3, "unit": "m" },
+    "conditionText": { "en": "Plot above 250 and up to 1000 sq m", "hi": "250 से अधिक तथा 1000 वर्ग मीटर तक का भूखंड" },
+    "note": { "en": "To be left on both sides of the building.", "hi": "भवन के दोनों ओर छोड़ा जाना है।" }
+  },
+  {
+    "id": "ss-b-04", "topic": "side_setback", "sourceId": "s-r25-t9",
+    "use": ["residential", "commercial", "mixed"],
+    "conditions": { "plotAreaMin": 1000, "plotAreaMax": null, "roadWidthMin": null, "roadWidthMax": null },
+    "value": { "kind": "length", "number": 4.5, "unit": "m" },
+    "conditionText": { "en": "Plot above 1000 sq m", "hi": "1000 वर्ग मीटर से अधिक का भूखंड" },
+    "note": { "en": "To be left on both sides of the building.", "hi": "भवन के दोनों ओर छोड़ा जाना है।" }
+  },
+  {
+    "id": "rs-b-01", "topic": "rear_setback", "sourceId": "s-r25-t10",
+    "use": ["residential", "commercial", "mixed"],
+    "conditions": { "plotAreaMin": null, "plotAreaMax": 100, "roadWidthMin": null, "roadWidthMax": null },
+    "value": { "kind": "length", "number": 1.5, "unit": "m" },
+    "conditionText": { "en": "Plot up to 100 sq m", "hi": "100 वर्ग मीटर तक का भूखंड" }
+  },
+  {
+    "id": "rs-b-02", "topic": "rear_setback", "sourceId": "s-r25-t10",
+    "use": ["residential", "commercial", "mixed"],
+    "conditions": { "plotAreaMin": 100, "plotAreaMax": 250, "roadWidthMin": null, "roadWidthMax": null },
+    "value": { "kind": "length", "number": 2.5, "unit": "m" },
+    "conditionText": { "en": "Plot above 100 and up to 250 sq m", "hi": "100 से अधिक तथा 250 वर्ग मीटर तक का भूखंड" }
+  },
+  {
+    "id": "rs-b-03", "topic": "rear_setback", "sourceId": "s-r25-t10",
+    "use": ["residential", "commercial", "mixed"],
+    "conditions": { "plotAreaMin": 250, "plotAreaMax": 1000, "roadWidthMin": null, "roadWidthMax": null },
+    "value": { "kind": "length", "number": 3, "unit": "m" },
+    "conditionText": { "en": "Plot above 250 and up to 1000 sq m", "hi": "250 से अधिक तथा 1000 वर्ग मीटर तक का भूखंड" }
+  },
+  {
+    "id": "rs-b-04", "topic": "rear_setback", "sourceId": "s-r25-t10",
+    "use": ["residential", "commercial", "mixed"],
+    "conditions": { "plotAreaMin": 1000, "plotAreaMax": null, "roadWidthMin": null, "roadWidthMax": null },
+    "value": { "kind": "length", "number": 4.5, "unit": "m" },
+    "conditionText": { "en": "Plot above 1000 sq m", "hi": "1000 वर्ग मीटर से अधिक का भूखंड" }
+  },
+  {
+    "id": "gc-b-01", "topic": "ground_coverage", "sourceId": "s-r29-t11",
+    "use": ["residential"],
+    "conditions": { "plotAreaMin": null, "plotAreaMax": 100, "roadWidthMin": null, "roadWidthMax": null },
+    "value": { "kind": "percent", "number": 70, "unit": "%" },
+    "conditionText": { "en": "Residential — plot up to 100 sq m", "hi": "आवासीय — 100 वर्ग मीटर तक का भूखंड" }
+  },
+  {
+    "id": "gc-b-02", "topic": "ground_coverage", "sourceId": "s-r29-t11",
+    "use": ["residential"],
+    "conditions": { "plotAreaMin": 100, "plotAreaMax": 250, "roadWidthMin": null, "roadWidthMax": null },
+    "value": { "kind": "percent", "number": 65, "unit": "%" },
+    "conditionText": { "en": "Residential — plot above 100 and up to 250 sq m", "hi": "आवासीय — 100 से अधिक तथा 250 वर्ग मीटर तक का भूखंड" }
+  },
+  {
+    "id": "gc-b-03", "topic": "ground_coverage", "sourceId": "s-r29-t11",
+    "use": ["residential"],
+    "conditions": { "plotAreaMin": 250, "plotAreaMax": 500, "roadWidthMin": null, "roadWidthMax": null },
+    "value": { "kind": "percent", "number": 60, "unit": "%" },
+    "conditionText": { "en": "Residential — plot above 250 and up to 500 sq m", "hi": "आवासीय — 250 से अधिक तथा 500 वर्ग मीटर तक का भूखंड" }
+  },
+  {
+    "id": "gc-b-04", "topic": "ground_coverage", "sourceId": "s-r29-t11",
+    "use": ["residential"],
+    "conditions": { "plotAreaMin": 500, "plotAreaMax": null, "roadWidthMin": null, "roadWidthMax": null },
+    "value": { "kind": "percent", "number": 50, "unit": "%" },
+    "conditionText": { "en": "Residential — plot above 500 sq m", "hi": "आवासीय — 500 वर्ग मीटर से अधिक का भूखंड" }
+  },
+  {
+    "id": "gc-b-05", "topic": "ground_coverage", "sourceId": "s-r29-t11",
+    "use": ["commercial"],
+    "conditions": { "plotAreaMin": null, "plotAreaMax": 500, "roadWidthMin": null, "roadWidthMax": null },
+    "value": { "kind": "percent", "number": 60, "unit": "%" },
+    "conditionText": { "en": "Commercial — plot up to 500 sq m", "hi": "वाणिज्यिक — 500 वर्ग मीटर तक का भूखंड" }
+  },
+  {
+    "id": "gc-b-06", "topic": "ground_coverage", "sourceId": "s-r29-t11",
+    "use": ["commercial"],
+    "conditions": { "plotAreaMin": 500, "plotAreaMax": null, "roadWidthMin": null, "roadWidthMax": null },
+    "value": { "kind": "percent", "number": 50, "unit": "%" },
+    "conditionText": { "en": "Commercial — plot above 500 sq m", "hi": "वाणिज्यिक — 500 वर्ग मीटर से अधिक का भूखंड" }
+  },
+  {
+    "id": "gc-b-07", "topic": "ground_coverage", "sourceId": "s-r29-t11",
+    "use": ["mixed"],
+    "conditions": { "plotAreaMin": null, "plotAreaMax": null, "roadWidthMin": null, "roadWidthMax": null },
+    "value": { "kind": "percent", "number": 60, "unit": "%" },
+    "conditionText": { "en": "Mixed use — any plot area", "hi": "मिश्रित उपयोग — कोई भी भूखंड क्षेत्रफल" }
+  },
+  {
+    "id": "far-b-r1", "topic": "far", "sourceId": "s-r30-t12",
+    "use": ["residential"],
+    "conditions": { "plotAreaMin": null, "plotAreaMax": null, "roadWidthMin": null, "roadWidthMax": 9 },
+    "value": { "kind": "ratio", "number": 1.25, "unit": "" },
+    "conditionText": { "en": "Residential — road less than 9 m", "hi": "आवासीय — सड़क 9 मीटर से कम" }
+  },
+  {
+    "id": "far-b-r2", "topic": "far", "sourceId": "s-r30-t12",
+    "use": ["residential"],
+    "conditions": { "plotAreaMin": null, "plotAreaMax": null, "roadWidthMin": 9, "roadWidthMax": 12 },
+    "value": { "kind": "ratio", "number": 1.5, "unit": "" },
+    "conditionText": { "en": "Residential — road 9 m and above but less than 12 m", "hi": "आवासीय — सड़क 9 मीटर या अधिक किन्तु 12 मीटर से कम" }
+  },
+  {
+    "id": "far-b-r3", "topic": "far", "sourceId": "s-r30-t12",
+    "use": ["residential"],
+    "conditions": { "plotAreaMin": null, "plotAreaMax": null, "roadWidthMin": 12, "roadWidthMax": 18 },
+    "value": { "kind": "ratio", "number": 1.75, "unit": "" },
+    "conditionText": { "en": "Residential — road 12 m and above but less than 18 m", "hi": "आवासीय — सड़क 12 मीटर या अधिक किन्तु 18 मीटर से कम" }
+  },
+  {
+    "id": "far-b-r4", "topic": "far", "sourceId": "s-r30-t12",
+    "use": ["residential"],
+    "conditions": { "plotAreaMin": null, "plotAreaMax": null, "roadWidthMin": 18, "roadWidthMax": null },
+    "value": { "kind": "ratio", "number": 2, "unit": "" },
+    "conditionText": { "en": "Residential — road 18 m and above", "hi": "आवासीय — सड़क 18 मीटर या अधिक" }
+  },
+  {
+    "id": "far-b-c0", "topic": "far", "sourceId": "s-r31-t13",
+    "use": ["commercial"],
+    "conditions": { "plotAreaMin": null, "plotAreaMax": null, "roadWidthMin": null, "roadWidthMax": 9 },
+    "value": { "kind": "not_permitted", "number": null, "unit": "", "label": { "en": "Commercial building not permitted", "hi": "वाणिज्यिक भवन अनुमत नहीं" } },
+    "conditionText": { "en": "Commercial — road less than 9 m", "hi": "वाणिज्यिक — सड़क 9 मीटर से कम" },
+    "note": { "en": "Rule 31 bars commercial use on a plot abutting a road narrower than 9 m. Advise the applicant to apply for a permissible use or seek change of land use.", "hi": "नियम 31, 9 मीटर से कम चौड़ी सड़क से लगे भूखंड पर वाणिज्यिक उपयोग प्रतिबंधित करता है। आवेदक को अनुमेय उपयोग हेतु आवेदन करने अथवा भू-उपयोग परिवर्तन की सलाह दें।" }
+  },
+  {
+    "id": "far-b-c1", "topic": "far", "sourceId": "s-r31-t13",
+    "use": ["commercial"],
+    "conditions": { "plotAreaMin": null, "plotAreaMax": null, "roadWidthMin": 9, "roadWidthMax": 12 },
+    "value": { "kind": "ratio", "number": 1.5, "unit": "" },
+    "conditionText": { "en": "Commercial — road 9 m and above but less than 12 m", "hi": "वाणिज्यिक — सड़क 9 मीटर या अधिक किन्तु 12 मीटर से कम" }
+  },
+  {
+    "id": "far-b-c2", "topic": "far", "sourceId": "s-r31-t13",
+    "use": ["commercial"],
+    "conditions": { "plotAreaMin": null, "plotAreaMax": null, "roadWidthMin": 12, "roadWidthMax": 18 },
+    "value": { "kind": "ratio", "number": 2, "unit": "" },
+    "conditionText": { "en": "Commercial — road 12 m and above but less than 18 m", "hi": "वाणिज्यिक — सड़क 12 मीटर या अधिक किन्तु 18 मीटर से कम" }
+  },
+  {
+    "id": "far-b-c3", "topic": "far", "sourceId": "s-r31-t13",
+    "use": ["commercial"],
+    "conditions": { "plotAreaMin": null, "plotAreaMax": null, "roadWidthMin": 18, "roadWidthMax": null },
+    "value": { "kind": "ratio", "number": 2.5, "unit": "" },
+    "conditionText": { "en": "Commercial — road 18 m and above", "hi": "वाणिज्यिक — सड़क 18 मीटर या अधिक" }
+  },
+  {
+    "id": "far-b-m1", "topic": "far", "sourceId": "s-r32-t14",
+    "use": ["mixed"],
+    "conditions": { "plotAreaMin": null, "plotAreaMax": null, "roadWidthMin": null, "roadWidthMax": 12 },
+    "value": { "kind": "ratio", "number": 1.5, "unit": "" },
+    "conditionText": { "en": "Mixed use — road less than 12 m", "hi": "मिश्रित उपयोग — सड़क 12 मीटर से कम" }
+  },
+  {
+    "id": "far-b-m2", "topic": "far", "sourceId": "s-r32-t14",
+    "use": ["mixed"],
+    "conditions": { "plotAreaMin": null, "plotAreaMax": null, "roadWidthMin": 12, "roadWidthMax": null },
+    "value": { "kind": "ratio", "number": 2, "unit": "" },
+    "conditionText": { "en": "Mixed use — road 12 m and above", "hi": "मिश्रित उपयोग — सड़क 12 मीटर या अधिक" }
+  },
+  {
+    "id": "mf-b-01", "topic": "max_floors", "sourceId": "s-r36-t16",
+    "use": ["residential", "commercial", "mixed"],
+    "conditions": { "plotAreaMin": null, "plotAreaMax": null, "roadWidthMin": null, "roadWidthMax": 9 },
+    "value": { "kind": "floors", "number": 3, "unit": "", "label": { "en": "Ground + 2 floors", "hi": "भूतल + 2 तल" } },
+    "conditionText": { "en": "Road less than 9 m", "hi": "सड़क 9 मीटर से कम" }
+  },
+  {
+    "id": "mf-b-02", "topic": "max_floors", "sourceId": "s-r36-t16",
+    "use": ["residential", "commercial", "mixed"],
+    "conditions": { "plotAreaMin": null, "plotAreaMax": null, "roadWidthMin": 9, "roadWidthMax": 12 },
+    "value": { "kind": "floors", "number": 4, "unit": "", "label": { "en": "Ground + 3 floors", "hi": "भूतल + 3 तल" } },
+    "conditionText": { "en": "Road 9 m and above but less than 12 m", "hi": "सड़क 9 मीटर या अधिक किन्तु 12 मीटर से कम" }
+  },
+  {
+    "id": "mf-b-03", "topic": "max_floors", "sourceId": "s-r36-t16",
+    "use": ["residential", "commercial", "mixed"],
+    "conditions": { "plotAreaMin": null, "plotAreaMax": null, "roadWidthMin": 12, "roadWidthMax": 18 },
+    "value": { "kind": "floors", "number": 5, "unit": "", "label": { "en": "Ground + 4 floors", "hi": "भूतल + 4 तल" } },
+    "conditionText": { "en": "Road 12 m and above but less than 18 m", "hi": "सड़क 12 मीटर या अधिक किन्तु 18 मीटर से कम" },
+    "note": { "en": "If the building exceeds 15 m in height, Fire Service NOC under Rule 70 is required.", "hi": "यदि भवन की ऊँचाई 15 मीटर से अधिक हो तो नियम 70 के अंतर्गत अग्निशमन सेवा का अनापत्ति प्रमाण पत्र आवश्यक है।" }
+  },
+  {
+    "id": "mf-b-04", "topic": "max_floors", "sourceId": "s-r36-t16",
+    "use": ["residential", "commercial", "mixed"],
+    "conditions": { "plotAreaMin": null, "plotAreaMax": null, "roadWidthMin": 18, "roadWidthMax": null },
+    "value": { "kind": "floors", "number": 6, "unit": "", "label": { "en": "Ground + 5 floors", "hi": "भूतल + 5 तल" } },
+    "conditionText": { "en": "Road 18 m and above", "hi": "सड़क 18 मीटर या अधिक" },
+    "note": { "en": "Fire Service NOC under Rule 70 required above 15 m; Airports Authority clearance above 30 m where applicable.", "hi": "15 मीटर से अधिक पर नियम 70 के अंतर्गत अग्निशमन अनापत्ति आवश्यक; 30 मीटर से अधिक पर, जहाँ लागू हो, विमानपत्तन प्राधिकरण की अनुमति आवश्यक।" }
+  },
+  {
+    "id": "fee-b-01", "topic": "fee", "sourceId": "s-r90-t24",
+    "use": ["residential"],
+    "conditions": { "plotAreaMin": null, "plotAreaMax": 500, "roadWidthMin": null, "roadWidthMax": null },
+    "value": { "kind": "rate", "number": 12, "unit": "₹ per sq m" },
+    "conditionText": { "en": "Residential — plot up to 500 sq m", "hi": "आवासीय — 500 वर्ग मीटर तक का भूखंड" },
+    "note": { "en": "Subject to a minimum fee of ₹1,000 under Rule 90(1).", "hi": "नियम 90(1) के अंतर्गत न्यूनतम ₹1,000 शुल्क के अध्यधीन।" }
+  },
+  {
+    "id": "fee-b-02", "topic": "fee", "sourceId": "s-r90-t24",
+    "use": ["residential"],
+    "conditions": { "plotAreaMin": 500, "plotAreaMax": null, "roadWidthMin": null, "roadWidthMax": null },
+    "value": { "kind": "rate", "number": 18, "unit": "₹ per sq m" },
+    "conditionText": { "en": "Residential — plot above 500 sq m", "hi": "आवासीय — 500 वर्ग मीटर से अधिक का भूखंड" },
+    "note": { "en": "Subject to a minimum fee of ₹1,000 under Rule 90(1).", "hi": "नियम 90(1) के अंतर्गत न्यूनतम ₹1,000 शुल्क के अध्यधीन।" }
+  },
+  {
+    "id": "fee-b-03", "topic": "fee", "sourceId": "s-r90-t24",
+    "use": ["commercial"],
+    "conditions": { "plotAreaMin": null, "plotAreaMax": null, "roadWidthMin": null, "roadWidthMax": null },
+    "value": { "kind": "rate", "number": 30, "unit": "₹ per sq m" },
+    "conditionText": { "en": "Commercial — any plot area", "hi": "वाणिज्यिक — कोई भी भूखंड क्षेत्रफल" },
+    "note": { "en": "Subject to a minimum fee of ₹1,000 under Rule 90(1).", "hi": "नियम 90(1) के अंतर्गत न्यूनतम ₹1,000 शुल्क के अध्यधीन।" }
+  },
+  {
+    "id": "fee-b-04", "topic": "fee", "sourceId": "s-r90-t24",
+    "use": ["mixed"],
+    "conditions": { "plotAreaMin": null, "plotAreaMax": null, "roadWidthMin": null, "roadWidthMax": null },
+    "value": { "kind": "rate", "number": 22, "unit": "₹ per sq m" },
+    "conditionText": { "en": "Mixed use — any plot area", "hi": "मिश्रित उपयोग — कोई भी भूखंड क्षेत्रफल" },
+    "note": { "en": "Subject to a minimum fee of ₹1,000 under Rule 90(1).", "hi": "नियम 90(1) के अंतर्गत न्यूनतम ₹1,000 शुल्क के अध्यधीन।" }
+  },
+  {
+    "id": "fs-a-01", "topic": "front_setback", "sourceId": "s-amd-t8a",
+    "use": ["residential", "commercial", "mixed"],
+    "conditions": { "plotAreaMin": null, "plotAreaMax": 500, "roadWidthMin": null, "roadWidthMax": 9 },
+    "value": { "kind": "length", "number": 1.5, "unit": "m" },
+    "conditionText": { "en": "Plot up to 500 sq m — road less than 9 m", "hi": "500 वर्ग मीटर तक का भूखंड — सड़क 9 मीटर से कम" }
+  },
+  {
+    "id": "fs-a-02", "topic": "front_setback", "sourceId": "s-amd-t8a",
+    "use": ["residential", "commercial", "mixed"],
+    "conditions": { "plotAreaMin": null, "plotAreaMax": 500, "roadWidthMin": 9, "roadWidthMax": null },
+    "value": { "kind": "length", "number": 3, "unit": "m" },
+    "conditionText": { "en": "Plot up to 500 sq m — road 9 m and above", "hi": "500 वर्ग मीटर तक का भूखंड — सड़क 9 मीटर या अधिक" }
+  },
+  {
+    "id": "ss-a-01", "topic": "side_setback", "sourceId": "s-amd-t8a",
+    "use": ["residential", "commercial", "mixed"],
+    "conditions": { "plotAreaMin": null, "plotAreaMax": 100, "roadWidthMin": null, "roadWidthMax": null },
+    "value": { "kind": "length", "number": 0, "unit": "m", "label": { "en": "Nil (may be zero)", "hi": "शून्य (नहीं छोड़ना अनिवार्य नहीं)" } },
+    "conditionText": { "en": "Plot up to 100 sq m", "hi": "100 वर्ग मीटर तक का भूखंड" },
+    "note": { "en": "Light and ventilation conditions under Rule 25(6) continue to apply.", "hi": "नियम 25(6) की प्रकाश एवं वायु संबंधी शर्तें यथावत् लागू रहेंगी।" }
+  },
+  {
+    "id": "ss-a-02", "topic": "side_setback", "sourceId": "s-amd-t8a",
+    "use": ["residential", "commercial", "mixed"],
+    "conditions": { "plotAreaMin": 100, "plotAreaMax": 500, "roadWidthMin": null, "roadWidthMax": null },
+    "value": { "kind": "length", "number": 1.5, "unit": "m" },
+    "conditionText": { "en": "Plot above 100 and up to 500 sq m", "hi": "100 से अधिक तथा 500 वर्ग मीटर तक का भूखंड" },
+    "note": { "en": "To be left on both sides of the building.", "hi": "भवन के दोनों ओर छोड़ा जाना है।" }
+  },
+  {
+    "id": "rs-a-01", "topic": "rear_setback", "sourceId": "s-amd-t8a",
+    "use": ["residential", "commercial", "mixed"],
+    "conditions": { "plotAreaMin": null, "plotAreaMax": 100, "roadWidthMin": null, "roadWidthMax": null },
+    "value": { "kind": "length", "number": 1.5, "unit": "m" },
+    "conditionText": { "en": "Plot up to 100 sq m", "hi": "100 वर्ग मीटर तक का भूखंड" }
+  },
+  {
+    "id": "rs-a-02", "topic": "rear_setback", "sourceId": "s-amd-t8a",
+    "use": ["residential", "commercial", "mixed"],
+    "conditions": { "plotAreaMin": 100, "plotAreaMax": 500, "roadWidthMin": null, "roadWidthMax": null },
+    "value": { "kind": "length", "number": 2, "unit": "m" },
+    "conditionText": { "en": "Plot above 100 and up to 500 sq m", "hi": "100 से अधिक तथा 500 वर्ग मीटर तक का भूखंड" }
+  },
+  {
+    "id": "gc-a-01", "topic": "ground_coverage", "sourceId": "s-amd-t12a",
+    "use": ["residential", "commercial", "mixed"],
+    "conditions": { "plotAreaMin": null, "plotAreaMax": 500, "roadWidthMin": null, "roadWidthMax": null },
+    "value": { "kind": "percent", "number": 65, "unit": "%" },
+    "conditionText": { "en": "Any use — plot up to 500 sq m", "hi": "कोई भी उपयोग — 500 वर्ग मीटर तक का भूखंड" }
+  },
+  {
+    "id": "far-a-r1", "topic": "far", "sourceId": "s-amd-t12a",
+    "use": ["residential"],
+    "conditions": { "plotAreaMin": null, "plotAreaMax": 500, "roadWidthMin": null, "roadWidthMax": 9 },
+    "value": { "kind": "ratio", "number": 1.5, "unit": "" },
+    "conditionText": { "en": "Residential — plot up to 500 sq m, road less than 9 m", "hi": "आवासीय — 500 वर्ग मीटर तक का भूखंड, सड़क 9 मीटर से कम" }
+  },
+  {
+    "id": "far-a-r2", "topic": "far", "sourceId": "s-amd-t12a",
+    "use": ["residential"],
+    "conditions": { "plotAreaMin": null, "plotAreaMax": 500, "roadWidthMin": 9, "roadWidthMax": 12 },
+    "value": { "kind": "ratio", "number": 1.75, "unit": "" },
+    "conditionText": { "en": "Residential — plot up to 500 sq m, road 9 m and above but less than 12 m", "hi": "आवासीय — 500 वर्ग मीटर तक का भूखंड, सड़क 9 मीटर या अधिक किन्तु 12 मीटर से कम" }
+  },
+  {
+    "id": "far-a-r3", "topic": "far", "sourceId": "s-amd-t12a",
+    "use": ["residential"],
+    "conditions": { "plotAreaMin": null, "plotAreaMax": 500, "roadWidthMin": 12, "roadWidthMax": null },
+    "value": { "kind": "ratio", "number": 2, "unit": "" },
+    "conditionText": { "en": "Residential — plot up to 500 sq m, road 12 m and above", "hi": "आवासीय — 500 वर्ग मीटर तक का भूखंड, सड़क 12 मीटर या अधिक" }
+  },
+  {
+    "id": "far-a-c0", "topic": "far", "sourceId": "s-amd-t12a",
+    "use": ["commercial"],
+    "conditions": { "plotAreaMin": null, "plotAreaMax": 500, "roadWidthMin": null, "roadWidthMax": 9 },
+    "value": { "kind": "not_permitted", "number": null, "unit": "", "label": { "en": "Commercial building not permitted", "hi": "वाणिज्यिक भवन अनुमत नहीं" } },
+    "conditionText": { "en": "Commercial — plot up to 500 sq m, road less than 9 m", "hi": "वाणिज्यिक — 500 वर्ग मीटर तक का भूखंड, सड़क 9 मीटर से कम" },
+    "note": { "en": "The 2026 amendment did not relax the Rule 31 bar on commercial use below a 9 m road.", "hi": "2026 के संशोधन ने 9 मीटर से कम सड़क पर वाणिज्यिक उपयोग पर नियम 31 के प्रतिबंध में छूट नहीं दी है।" }
+  },
+  {
+    "id": "far-a-c1", "topic": "far", "sourceId": "s-amd-t12a",
+    "use": ["commercial"],
+    "conditions": { "plotAreaMin": null, "plotAreaMax": 500, "roadWidthMin": 9, "roadWidthMax": 12 },
+    "value": { "kind": "ratio", "number": 1.75, "unit": "" },
+    "conditionText": { "en": "Commercial — plot up to 500 sq m, road 9 m and above but less than 12 m", "hi": "वाणिज्यिक — 500 वर्ग मीटर तक का भूखंड, सड़क 9 मीटर या अधिक किन्तु 12 मीटर से कम" }
+  },
+  {
+    "id": "far-a-c2", "topic": "far", "sourceId": "s-amd-t12a",
+    "use": ["commercial"],
+    "conditions": { "plotAreaMin": null, "plotAreaMax": 500, "roadWidthMin": 12, "roadWidthMax": null },
+    "value": { "kind": "ratio", "number": 2.25, "unit": "" },
+    "conditionText": { "en": "Commercial — plot up to 500 sq m, road 12 m and above", "hi": "वाणिज्यिक — 500 वर्ग मीटर तक का भूखंड, सड़क 12 मीटर या अधिक" }
+  },
+  {
+    "id": "far-a-m1", "topic": "far", "sourceId": "s-amd-t12a",
+    "use": ["mixed"],
+    "conditions": { "plotAreaMin": null, "plotAreaMax": 500, "roadWidthMin": null, "roadWidthMax": null },
+    "value": { "kind": "ratio", "number": 2, "unit": "" },
+    "conditionText": { "en": "Mixed use — plot up to 500 sq m, any road width", "hi": "मिश्रित उपयोग — 500 वर्ग मीटर तक का भूखंड, कोई भी सड़क चौड़ाई" }
+  },
+  {
+    "id": "mf-a-01", "topic": "max_floors", "sourceId": "s-amd-t12a",
+    "use": ["residential", "commercial", "mixed"],
+    "conditions": { "plotAreaMin": null, "plotAreaMax": 500, "roadWidthMin": null, "roadWidthMax": 9 },
+    "value": { "kind": "floors", "number": 3, "unit": "", "label": { "en": "Ground + 2 floors", "hi": "भूतल + 2 तल" } },
+    "conditionText": { "en": "Plot up to 500 sq m — road less than 9 m", "hi": "500 वर्ग मीटर तक का भूखंड — सड़क 9 मीटर से कम" }
+  },
+  {
+    "id": "mf-a-02", "topic": "max_floors", "sourceId": "s-amd-t12a",
+    "use": ["residential", "commercial", "mixed"],
+    "conditions": { "plotAreaMin": null, "plotAreaMax": 500, "roadWidthMin": 9, "roadWidthMax": null },
+    "value": { "kind": "floors", "number": 4, "unit": "", "label": { "en": "Ground + 3 floors", "hi": "भूतल + 3 तल" } },
+    "conditionText": { "en": "Plot up to 500 sq m — road 9 m and above", "hi": "500 वर्ग मीटर तक का भूखंड — सड़क 9 मीटर या अधिक" },
+    "note": { "en": "If the building exceeds 15 m in height, Fire Service NOC under Rule 70 is still required.", "hi": "यदि भवन की ऊँचाई 15 मीटर से अधिक हो तो नियम 70 के अंतर्गत अग्निशमन अनापत्ति अब भी आवश्यक है।" }
+  },
+  {
+    "id": "fee-a-01", "topic": "fee", "sourceId": "s-amd-t24a",
+    "use": ["residential"],
+    "conditions": { "plotAreaMin": null, "plotAreaMax": 500, "roadWidthMin": null, "roadWidthMax": null },
+    "value": { "kind": "rate", "number": 15, "unit": "₹ per sq m" },
+    "conditionText": { "en": "Residential — plot up to 500 sq m", "hi": "आवासीय — 500 वर्ग मीटर तक का भूखंड" },
+    "note": { "en": "Minimum fee of ₹1,000 under Rule 90(1) continues to apply.", "hi": "नियम 90(1) के अंतर्गत न्यूनतम ₹1,000 शुल्क यथावत् लागू।" }
+  },
+  {
+    "id": "fee-a-02", "topic": "fee", "sourceId": "s-amd-t24a",
+    "use": ["commercial"],
+    "conditions": { "plotAreaMin": null, "plotAreaMax": 500, "roadWidthMin": null, "roadWidthMax": null },
+    "value": { "kind": "rate", "number": 35, "unit": "₹ per sq m" },
+    "conditionText": { "en": "Commercial — plot up to 500 sq m", "hi": "वाणिज्यिक — 500 वर्ग मीटर तक का भूखंड" },
+    "note": { "en": "Minimum fee of ₹1,000 under Rule 90(1) continues to apply.", "hi": "नियम 90(1) के अंतर्गत न्यूनतम ₹1,000 शुल्क यथावत् लागू।" }
+  },
+  {
+    "id": "fee-a-03", "topic": "fee", "sourceId": "s-amd-t24a",
+    "use": ["mixed"],
+    "conditions": { "plotAreaMin": null, "plotAreaMax": 500, "roadWidthMin": null, "roadWidthMax": null },
+    "value": { "kind": "rate", "number": 26, "unit": "₹ per sq m" },
+    "conditionText": { "en": "Mixed use — plot up to 500 sq m", "hi": "मिश्रित उपयोग — 500 वर्ग मीटर तक का भूखंड" },
+    "note": { "en": "Minimum fee of ₹1,000 under Rule 90(1) continues to apply.", "hi": "नियम 90(1) के अंतर्गत न्यूनतम ₹1,000 शुल्क यथावत् लागू।" }
+  }
+]
