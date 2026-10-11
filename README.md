@@ -10,11 +10,40 @@ diagram shows the setback zones and buildable footprint to scale, checks a
 citizen's proposed construction against the matched rule, and a one-page
 printable Citizen Compliance Slip summarises the whole result.
 
+## Project Structure
+
+```
+niyamsathi/
+├── frontend/          # React + Vite SPA (main UI)
+│   ├── src/
+│   ├── scripts/
+│   ├── package.json
+│   └── vite.config.ts
+├── backend/           # Node.js + Express API server
+│   ├── server.js
+│   ├── package.json
+│   └── .env.example
+├── package.json       # Root workspace config
+└── README.md
+```
+
 ## Run it
 
+**Frontend only (default):**
 ```bash
 npm install
 npm run dev     # http://localhost:5173
+```
+
+**Frontend + Backend together:**
+```bash
+npm install
+npm run dev:full    # Frontend on :5173, Backend on :5000
+```
+
+**Backend server only:**
+```bash
+npm run backend:dev  # http://localhost:5000
 ```
 
 Other scripts: `npm run build`, `npm run typecheck`, `npm test`.

@@ -1,29 +1,23 @@
 {
-  "name": "niyamsathi",
-  "private": true,
+  "name": "niyamsathi-fullstack",
   "version": "1.0.0",
-  "type": "module",
+  "description": "NiyamSathi - Bhopal Building Rules Assistant with Visual Compliance Map",
+  "private": true,
   "scripts": {
-    "dev": "vite",
-    "build": "tsc --noEmit && vite build",
-    "preview": "vite preview",
-    "typecheck": "tsc --noEmit",
-    "test": "npm run test:rules && npm run test:render",
-    "test:rules": "esbuild --bundle --platform=node --format=cjs --loader:.json=json --loader:.css=empty --jsx=automatic --log-level=warning scripts/selftest.ts --outfile=.tmp/selftest.cjs && node .tmp/selftest.cjs",
-    "test:render": "esbuild --bundle --platform=node --format=cjs --loader:.json=json --loader:.css=empty --jsx=automatic --log-level=warning scripts/rendertest.tsx --outfile=.tmp/rendertest.cjs && node .tmp/rendertest.cjs"
+    "dev": "npm run dev -w frontend",
+    "dev:full": "concurrently \"npm run dev -w frontend\" \"npm run dev -w backend\"",
+    "build": "npm run build -w frontend",
+    "preview": "npm run preview -w frontend",
+    "test": "npm run test -w frontend",
+    "typecheck": "npm run typecheck -w frontend",
+    "backend:start": "npm run start -w backend",
+    "backend:dev": "npm run dev -w backend"
   },
-  "dependencies": {
-    "lucide-react": "^0.454.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
-  },
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
   "devDependencies": {
-    "@tailwindcss/vite": "^4.0.0",
-    "@types/react": "^18.3.12",
-    "@types/react-dom": "^18.3.1",
-    "@vitejs/plugin-react": "^4.3.3",
-    "tailwindcss": "^4.0.0",
-    "typescript": "^5.6.3",
-    "vite": "^5.4.11"
+    "concurrently": "^8.2.0"
   }
 }
